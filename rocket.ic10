@@ -1,0 +1,80 @@
+define silo 906210602
+define control 1556756312
+define oreminer -2027419821
+define iceminer 74521920
+define gasminer -1969723301
+define junkminer -1446002463
+alias ledmode d0
+alias ledgoods d1
+alias ledfuel d2
+alias ledquant d3
+alias allow d4
+
+start:
+yield
+lb r0 control Mode Average
+lb r1 control CollectableGoods Average
+lb r2 control Fuel Average
+lb r3 silo Quantity Sum
+l r5 allow Setting
+yield
+
+s ledmode Setting r0
+s ledgoods Setting r1
+s ledfuel Setting r2
+s ledquant Setting r3
+
+beq r0 0 skip
+
+blt r2 1000 flyhome
+bnez r5 flyhome
+skip:
+
+add r0 r0 1
+jr r0
+j idle
+j launching
+j traveling
+j arrived
+j idledest
+j returning
+j returned
+
+idle:
+beqz r3 empty
+sb silo Open 1
+j start
+empty:
+blt r2 15000 start
+bnez r5 start
+sb control Activate 1
+j start
+
+launching:
+traveling:
+arrived:
+j start
+idledest:
+beqz r1 nogoods
+sb oreminer Activate 1
+sb iceminer Activate 1
+sb gasminer Activate 1
+sb junkminer Activate 1
+s db Setting 4
+j start
+nogoods:
+yield
+sb control Activate 0
+yield
+sb control Activate 2
+s db Setting 1
+j start
+returning:
+returned:
+s db Setting 5
+j start
+
+flyhome:
+sb control Activate 5
+j start
+

@@ -1,0 +1,90 @@
+alias dial d0
+alias external d1
+alias led d2
+alias switch d3
+alias Avalue r5
+alias Bvalue r6
+alias Cvalue r7
+alias ComValue r8
+alias lasthash r9
+define destaddr 4
+
+move sp 0
+push 1758427767  # iron
+push -707307845  # copper
+push -1348105509 # gold
+push 1103972403  # silicon
+push 1830218956  # nickel
+push -190236170  # lead
+push -916518678  # silver
+start:
+yield
+l r0 dial Setting
+add sp r0 1
+peek r0
+s db Setting r0
+bne r0 lasthash hashchange
+l r0 switch Open
+bnez r0 doorder
+j start
+
+doorder:
+s switch Open 0
+move Avalue lasthash
+move Bvalue 900
+move Cvalue destaddr
+jal Compress
+jal send
+j start
+
+hashchange:
+move lasthash r0
+move Avalue r0
+move Bvalue 0
+move Cvalue 0
+jal Compress
+s led Color 5
+jal send
+s led Setting Avalue
+s led Color 2
+j start
+
+Compress:
+#Input: Avalue, Bvalue, Cvalue
+#Output: ComValue
+abs r1 Avalue
+mul ComValue r1 100000
+add ComValue ComValue Cvalue
+mul r1 Bvalue 100
+add ComValue ComValue r1
+bgtz Avalue ra
+mul ComValue ComValue -1
+j ra
+
+Decompress:
+#Input: ComValue
+#Output: Avalue, Bvalue, Cvalue
+abs r1 ComValue
+mod Cvalue r1 100
+sub r1 r1 Cvalue
+mod Bvalue r1 100000
+sub Avalue r1 Bvalue
+div Bvalue Bvalue 100
+div Avalue Avalue 100000
+bgtz ComValue ra
+mul Avalue Avalue -1
+j ra
+
+send:
+move r10 ra
+loop1:
+l r0 external Setting
+bnez r0 loop1
+s external Setting ComValue
+yield
+loop2:
+l ComValue external Setting
+jal Decompress
+bne Cvalue 99 loop2
+s external Setting 0
+j r10
