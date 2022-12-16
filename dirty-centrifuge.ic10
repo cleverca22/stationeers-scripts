@@ -1,0 +1,115 @@
+alias external d1
+alias led d0
+alias Avalue r5
+alias Bvalue r6
+alias Cvalue r7
+alias ComValue r8
+
+start:
+yield
+jal updateStats
+s led On 0
+ls r0 db 0 OccupantHash
+beqz r0 empty
+lr r1 db Contents Iron
+bgt r1 500 flush
+l r2 db Rpm
+blt r2 10 bootup
+j start
+
+bootup:
+s led On 1
+l r2 db Stress
+bgtz r2 bootup
+s db Open 0
+s db Throttle 10
+s db CombustionLimiter 100
+move r1 0
+bootloop:
+yield
+jal updateStats
+l r0 db Stress
+sub r2 r0 r1
+abs r2 r2
+s led Setting r2
+bgt r2 70 freeze
+bgt r2 2 slowdown
+s db Throttle 40
+l r3 db Rpm
+blt 450 r3 start
+j bootloop
+freeze:
+s db Throttle 0
+j bootloop
+slowdown:
+l r5 db Throttle
+sub r5 r5 10
+blt r5 10 bitfaster
+s db Throttle r5
+j bootloop
+bitfaster:
+s db Throttle 10
+j bootloop
+
+flush:
+s db CombustionLimiter 0
+s db Throttle 0
+s db Open 1
+j start
+
+empty:
+move Avalue -1234745580
+move Bvalue 50
+move Cvalue 2
+jal Compress
+
+loop1:
+l r0 external Setting
+bnez r0 loop1
+
+s external Setting ComValue
+
+loop2:
+l ComValue external Setting
+jal Decompress
+bne Cvalue 99 loop2
+s external Setting 0
+j start
+
+Compress:
+#Input: Avalue, Bvalue, Cvalue
+#Output: ComValue
+abs r1 Avalue
+mul ComValue r1 100000
+add ComValue ComValue Cvalue
+mul r1 Bvalue 100
+add ComValue ComValue r1
+bgtz Avalue ra
+mul ComValue ComValue -1
+j ra
+
+Decompress:
+#Input: ComValue
+#Output: Avalue, Bvalue, Cvalue
+abs r1 ComValue
+mod Cvalue r1 100
+sub r1 r1 Cvalue
+mod Bvalue r1 100000
+sub Avalue r1 Bvalue
+div Bvalue Bvalue 100
+div Avalue Avalue 100000
+bgtz ComValue ra
+mul Avalue Avalue -1
+j ra
+
+updateStats:
+move sp 0
+l r0 db Rpm
+push r0
+l r0 db Throttle
+push r0
+l r0 db CombustionLimiter
+push r0
+l r0 db Stress
+push r0
+j ra

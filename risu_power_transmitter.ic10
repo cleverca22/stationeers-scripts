@@ -1,0 +1,43 @@
+alias From d0
+alias To d1
+alias x r0
+alias y r1
+alias z r2
+alias a r3
+alias b r4
+alias rad2deg r5
+acos a -1
+div rad2deg 180 a
+loop:
+yield
+l a To PositionX
+l b From PositionX
+sub x a b
+l a To PositionY
+l b From PositionY
+sub y b a
+l a To PositionZ
+l b From PositionZ
+sub z a b
+mul a x x
+mul b y y
+add a a b
+mul b z z
+add a a b
+sqrt a a
+s db Setting a
+beqz a loop
+div x x a
+div y y a
+div z z a
+atan2 a x z
+mul a a rad2deg
+s From Horizontal a
+add a a 180
+s To Horizontal a
+acos a y
+mul a a rad2deg
+s From Vertical a
+sub a 180 a
+s To Vertical a
+j loop

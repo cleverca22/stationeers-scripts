@@ -1,0 +1,88 @@
+alias bin d0
+alias external d1
+alias led d2
+alias dial d3
+alias order d4
+
+alias Avalue r5
+alias Bvalue r6
+alias Cvalue r7
+alias ComValue r8
+alias OldHash r9
+
+start:
+yield
+ls r0 bin 0 OccupantHash
+beq r0 0 idle
+bne OldHash r0 change
+
+l r2 order Setting
+bne r2 0 doOrder
+j start
+
+idle:
+s led On 0
+j start
+
+change:
+s led On 1
+s led Color 5
+move OldHash r0
+move Avalue r0
+move Bvalue 0
+move Cvalue 0
+jal Compress
+
+l r2 external Setting
+brnez r2 -1
+s external Setting ComValue
+changeLoop:
+l ComValue external Setting
+jal Decompress
+bne Cvalue 99 changeLoop
+s led Setting Avalue
+s led Color 2
+s external Setting 0
+j start
+
+doOrder:
+s led On 1
+s led Color 5
+move Avalue r0
+l Bvalue dial Setting
+move Cvalue 01
+jal Compress
+
+l r2 external Setting
+brnez r2 -1
+s external Setting ComValue
+orderLoop:
+l ComValue external Setting
+jal Decompress
+bne Cvalue 99 orderLoop
+s led Setting Avalue
+s led Color 2
+s external Setting 0
+j start
+
+Compress:
+abs r1 Avalue
+mul ComValue r1 100000
+add ComValue ComValue Cvalue
+mul r1 Bvalue 100
+add ComValue ComValue r1
+bgtz Avalue ra
+mul ComValue ComValue -1
+j ra
+
+Decompress:
+abs r1 ComValue
+mod Cvalue r1 100
+sub r1 r1 Cvalue
+mod Bvalue r1 100000
+sub Avalue r1 Bvalue
+div Bvalue Bvalue 100
+div Avalue Avalue 100000
+bgtz ComValue ra
+mul Avalue Avalue -1
+j ra
