@@ -77,14 +77,16 @@ function doit(worldxmo) {
       }
     }
     if (thing.PrefabName == "StructureSDBSilo") {
-      // TODO, if list only has 1 element, its not a list!
-      for (const child of thing.AllStoredItems) {
-        //console.log(child.DynamicThing);
-        if (prefab_counts[child.DynamicThing.PrefabName] == undefined) prefab_counts[child.DynamicThing.PrefabName] = 0;
-        if (child.DynamicThing.Quantity) {
-          prefab_counts[child.DynamicThing.PrefabName] += child.DynamicThing.Quantity;
-        } else {
-          prefab_counts[child.DynamicThing.PrefabName] += 1;
+      if (thing.AllStoredItems != undefined) {
+        // TODO, if list only has 1 element, its not a list!
+        for (const child of thing.AllStoredItems) {
+          //console.log(child.DynamicThing);
+          if (prefab_counts[child.DynamicThing.PrefabName] == undefined) prefab_counts[child.DynamicThing.PrefabName] = 0;
+          if (child.DynamicThing.Quantity) {
+            prefab_counts[child.DynamicThing.PrefabName] += child.DynamicThing.Quantity;
+          } else {
+            prefab_counts[child.DynamicThing.PrefabName] += 1;
+          }
         }
       }
     }
