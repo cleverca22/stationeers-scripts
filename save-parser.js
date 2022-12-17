@@ -15,6 +15,7 @@ var hash_lookup = {};
 var metrics = {};
 var prefab_counts = {};
 var child_list = {};
+var reference_lut = {};
 const http = require('node:http');
 
 for (item of items) {
@@ -50,6 +51,10 @@ function doit(worldxmo) {
   metrics["things"] = doc.WorldData.Things.ThingSaveData.length;
   prefab_counts = {};
   child_list = {};
+  reference_lut = {};
+
+  var graph = [];
+  graph.push("digraph {");
 
   for (const thing of doc.WorldData.Things.ThingSaveData) {
     var hash = CRC32.str(thing.PrefabName);
@@ -59,6 +64,8 @@ function doit(worldxmo) {
     }
     if (child_list[thing.ParentReferenceId] == undefined) child_list[thing.ParentReferenceId] = [];
     child_list[thing.ParentReferenceId].push(thing);
+    reference_lut[thing.ReferenceId] = thing;
+    if (thing.ParentReferenceId) graph.push(thing.ParentReferenceId + " -> " + thing.ReferenceId);
   }
   for (const thing of doc.WorldData.Things.ThingSaveData) {
     if (prefab_counts[thing.PrefabName] == undefined) prefab_counts[thing.PrefabName] = 0;
@@ -97,6 +104,12 @@ function doit(worldxmo) {
       console.log("fert count",thing.Quantity, "cycles", thing.Cycles, "harvest boost", thing.HarvestBoost, "growth speed", thing.GrowthSpeed);
     }
     if (thing.PrefabName == "ItemIntegratedCircuit10") {
+      var housing = reference_lut[thing.ParentReferenceId];
+      //console.log("housing", housing.PrefabName, housing.DeviceIDs);
+      for (var i=0; i<6; i++) {
+        var device = reference_lut[housing.DeviceIDs[i]];
+        //if (device) console.log("d"+i, device.PrefabName);
+      }
       if (thing.CustomName && (thing.CustomName.length > 0)) console.log(thing.CustomName);
       var expr = /^Prometheus (.*)$/;
       if (res = expr.exec(thing.CustomName)) {
@@ -135,6 +148,9 @@ function doit(worldxmo) {
       }
     }
   }
+  graph.push("}");
+  // example of creating a graph of all IC10 stuff
+  //fs.writeFileSync("connections.dot", graph.join("\n"));
 }
 
 var worldxml = process.argv[2];
