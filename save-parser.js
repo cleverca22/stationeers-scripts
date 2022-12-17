@@ -159,4 +159,6 @@ const server = http.createServer((req, res) => {
   res.end(lines.join("\n"));
 });
 
-server.listen(8000);
+var port = 8000;
+if (process.argv.length > 3) port = parseInt(process.argv[3]);
+server.listen(port);
