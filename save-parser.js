@@ -13,7 +13,6 @@ const items = [ "ItemIronOre", "ItemSiliconOre", "ItemSilverOre", "ItemCoalOre",
   , "ItemReagentMix"];
 var hash_lookup = {};
 var metrics = {};
-var prefab_counts = {};
 var child_list = {};
 var reference_lut = {};
 const http = require('node:http');
@@ -37,8 +36,25 @@ function decompress(value) {
 }
 
 function metrics_increment(key, value) {
+  if (typeof(value) == "string") value = parseFloat(value);
   if (metrics[key] == undefined) metrics[key] = value;
-  else metric[key] += value;
+  else metrics[key] += value;
+}
+
+function totalmols(atmos) {
+  return atmos.Oxygen + atmos.Nitrogen + atmos.CarbonDioxide + atmos.Volatiles + atmos.Chlorine + atmos.Water + atmos.NitrousOxide;
+}
+
+function add_metric(name, params, value) {
+  var l = [];
+  for (const key in params) {
+    l.push(key + '="' + params[key] + '"');
+  }
+  if (l.length) {
+    metrics_increment(name + "{" + l.join(",") + "}", value);
+  } else {
+    metrics_increment(name, value);
+  }
 }
 
 function doit(worldxmo) {
@@ -49,7 +65,6 @@ function doit(worldxmo) {
   metrics = {};
   metrics["days_past"] = doc.WorldData.DaysPast;
   metrics["things"] = doc.WorldData.Things.ThingSaveData.length;
-  prefab_counts = {};
   child_list = {};
   reference_lut = {};
 
@@ -68,11 +83,10 @@ function doit(worldxmo) {
     if (thing.ParentReferenceId) graph.push(thing.ParentReferenceId + " -> " + thing.ReferenceId);
   }
   for (const thing of doc.WorldData.Things.ThingSaveData) {
-    if (prefab_counts[thing.PrefabName] == undefined) prefab_counts[thing.PrefabName] = 0;
     if (thing.Quantity) {
-      prefab_counts[thing.PrefabName] += thing.Quantity;
+      add_metric("item_count", { prefab: thing.PrefabName }, thing.Quantity);
     } else {
-      prefab_counts[thing.PrefabName] += 1;
+      add_metric("item_count", { prefab: thing.PrefabName }, 1);
     }
     //if (thing.PrefabName == "StructureCombustionCentrifuge") {
     if (thing.Reagents != "") {
@@ -88,11 +102,10 @@ function doit(worldxmo) {
         // TODO, if list only has 1 element, its not a list!
         for (const child of thing.AllStoredItems) {
           //console.log(child.DynamicThing);
-          if (prefab_counts[child.DynamicThing.PrefabName] == undefined) prefab_counts[child.DynamicThing.PrefabName] = 0;
           if (child.DynamicThing.Quantity) {
-            prefab_counts[child.DynamicThing.PrefabName] += child.DynamicThing.Quantity;
+            add_metric("item_count", { prefab: child.DynamicThing.PrefabName }, child.DynamicThing.Quantity);
           } else {
-            prefab_counts[child.DynamicThing.PrefabName] += 1;
+            add_metric("item_count", { prefab: child.DynamicThing.PrefabName }, 1);
           }
         }
       }
@@ -106,9 +119,14 @@ function doit(worldxmo) {
     if (thing.PrefabName == "ItemIntegratedCircuit10") {
       var housing = reference_lut[thing.ParentReferenceId];
       //console.log("housing", housing.PrefabName, housing.DeviceIDs);
-      for (var i=0; i<6; i++) {
-        var device = reference_lut[housing.DeviceIDs[i]];
-        //if (device) console.log("d"+i, device.PrefabName);
+      if (housing.DeviceIDs) {
+        for (var i=0; i<6; i++) {
+          var id = housing.DeviceIDs[i];
+          if (id) {
+            var device = reference_lut[housing.DeviceIDs[i]];
+            //if (device) console.log("d"+i, device.PrefabName);
+          }
+        }
       }
       if (thing.CustomName && (thing.CustomName.length > 0)) console.log(thing.CustomName);
       var expr = /^Prometheus (.*)$/;
@@ -151,6 +169,35 @@ function doit(worldxmo) {
   graph.push("}");
   // example of creating a graph of all IC10 stuff
   //fs.writeFileSync("connections.dot", graph.join("\n"));
+  for (const atmos of doc.WorldData.Atmospheres.AtmosphereSaveData) {
+    if (atmos.ThingReferenceId) {
+      var parrent = reference_lut[atmos.ThingReferenceId];
+      var mols = totalmols(atmos);
+      if (mols > 0) {
+        add_metric("mols", { PrefabName: parrent.PrefabName, element: "Oxygen" }, atmos.Oxygen);
+        add_metric("mols", { PrefabName: parrent.PrefabName, element: "Volatiles" }, atmos.Volatiles);
+        add_metric("energy", { PrefabName: parrent.PrefabName }, atmos.Energy);
+      }
+    } else if ((atmos.Position.x == -19) && (atmos.Position.z == -77)) {
+      //console.log(atmos);
+      add_metric("cube_energy", {}, atmos.Energy);
+    } else if (atmos.Volume == 8000) { // a cube
+    } else if (atmos.NetworkReferenceId) { // a pipe network
+      if (atmos.Water) add_metric("pipe_mols", { NetworkReferenceId: atmos.NetworkReferenceId, element: "Water" }, atmos.Water);
+    } else {
+    }
+  }
+  for (const trader of doc.WorldData.StationContacts.StationContactData) {
+    console.log(trader.ContactName, trader.ContactType, trader.Lifetime, trader.Angle);
+    //console.log(Math.atan2(trader.Angle.x, trader.Angle.z));
+    //console.log(Math.atan2(trader.Angle.x, trader.Angle.y));
+    add_metric("trader_lifetime", { name: trader.ContactName, ref: trader.ReferenceId }, trader.Lifetime);
+    for (const item of trader.TradeItemData.TradingItemDat) {
+      var prefab = item.PrefabHash;
+      if (hash_lookup[prefab]) prefab = hash_lookup[prefab];
+      console.log("  ", prefab, "value", item.TradeValue, "max quant", item.MaxQuantity, "quant to purchase", item.QuantityToPurchase);
+    }
+  }
 }
 
 var worldxml = process.argv[2];
@@ -167,12 +214,10 @@ setInterval(scan, 5000);
 scan();
 
 const server = http.createServer((req, res) => {
+  console.log(new Date(), "poll");
   var lines = [];
   for (const metric in metrics) {
     lines.push(metric + " " + metrics[metric]);
-  }
-  for (const prefab in prefab_counts) {
-    lines.push("item_count{prefab=\"" + prefab + "\"} " + prefab_counts[prefab]);
   }
   res.end(lines.join("\n"));
 });
