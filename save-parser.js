@@ -2,6 +2,7 @@ const fs = require("fs");
 const { XMLParser, XMLBuilder, XMLValidator} = require("fast-xml-parser");
 var CRC32 = require('crc-32');
 var items = JSON.parse(fs.readFileSync("itemlist.json"));
+var prices = JSON.parse(fs.readFileSync("prices.json"));
 var hash_lookup = {};
 var metrics = {};
 var child_list = {};
@@ -239,7 +240,10 @@ function doit(worldxmo) {
       add_metric("trader_lifetime", { name: trader.ContactName, ref: trader.ReferenceId }, trader.Lifetime);
       for (const item of trader.TradeItemData.TradingItemDat) {
         var prefab = item.PrefabHash;
-        if (hash_lookup[prefab]) prefab = hash_lookup[prefab];
+        if (hash_lookup[prefab]) {
+          prefab = hash_lookup[prefab];
+          prices[prefab] = item.TradeValue;
+        }
         if (prefab == 0) {
           prefab = gas_item_to_string(item);
           add_metric("trade_item_price", { prefab: prefab, ref: trader.ReferenceId }, item.TradeValue);
@@ -255,6 +259,7 @@ function doit(worldxmo) {
   } else {
     console.log("  save bugged, all traders ran away");
   }
+  fs.writeFileSync("prices.json", JSON.stringify(prices, null, 2));
 }
 
 function gas_item_to_string(item) {
