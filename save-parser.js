@@ -232,7 +232,7 @@ function doit(worldxmo) {
       var horz = 180 - (Math.atan2(trader.Angle.z, trader.Angle.x) * 180 / Math.PI);
       var dist = Math.sqrt((trader.Angle.x*trader.Angle.x)+(trader.Angle.z*trader.Angle.z));
       var vert = 90 - Math.atan2(trader.Angle.y, dist) * 180 / Math.PI;
-      console.log(`${trader.ContactName} ${trader.Tier} ${trader.ContactType} ${trader.Lifetime} ${Math.round(horz)} ${Math.round(vert)}`);
+      console.log(`${trader.ContactName} ${trader.Tier} ${trader.ContactType} ${trader.Lifetime/60}mins ${Math.round(horz)} ${Math.round(vert)}`);
       // negative z is towards sunrise
       // 270 is towards sunrise
       // price -0.0390476137 means they will pay me $0.07 to take pollutant
