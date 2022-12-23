@@ -31,6 +31,11 @@ function fixnum(n) {
   else return n;
 }
 
+function fixarray(a) {
+  if (typeof(a) == "object") return a;
+  else return a;
+}
+
 function metrics_increment(key, value) {
   if (typeof(value) == "string") value = parseFloat(value);
   if (metrics[key] == undefined) metrics[key] = value;
@@ -127,7 +132,6 @@ function doit(worldxmo) {
     }
     if (thing.PrefabName == "ItemIntegratedCircuit10") {
       //if (thing.CustomName && (thing.CustomName.length > 0)) console.log(thing.CustomName);
-      var housing = reference_lut[thing.ParentReferenceId];
       var aliases = [];
       if (thing.NewAliasesKeys) {
         for (var i=0; i<thing.NewAliasesKeys.length; i++) {
@@ -145,13 +149,16 @@ function doit(worldxmo) {
         if (aliases[i]) names = ` aka ${aliases[i].join(",")}`;
         //console.log(`r${i}${names} == ${thing.Registers[i]}`);
       }
-      //console.log(`this IC10 is in slot ${thing.ParentSlotId} of a ${housing.PrefabName}`);
-      if (housing.DeviceIDs) {
-        for (var i=0; i<6; i++) {
-          var id = housing.DeviceIDs[i];
-          if (id) {
-            var device = reference_lut[housing.DeviceIDs[i]];
-            //if (device) console.log("d"+i, device.PrefabName);
+      if (thing.ParentReferenceId) {
+        var housing = reference_lut[thing.ParentReferenceId];
+        //console.log(`this IC10 is in slot ${thing.ParentSlotId} of a ${housing.PrefabName}`);
+        if (housing.DeviceIDs) {
+          for (var i=0; i<6; i++) {
+            var id = housing.DeviceIDs[i];
+            if (id) {
+              var device = reference_lut[housing.DeviceIDs[i]];
+              //if (device) console.log("d"+i, device.PrefabName);
+            }
           }
         }
       }
@@ -217,30 +224,36 @@ function doit(worldxmo) {
     } else {
     }
   }
-  for (const trader of doc.WorldData.StationContacts.StationContactData) {
-    var horz = 180 - (Math.atan2(trader.Angle.z, trader.Angle.x) * 180 / Math.PI);
-    var dist = Math.sqrt((trader.Angle.x*trader.Angle.x)+(trader.Angle.z*trader.Angle.z));
-    var vert = 90 - Math.atan2(trader.Angle.y, dist) * 180 / Math.PI;
-    console.log(`${trader.ContactName} ${trader.Tier} ${trader.ContactType} ${trader.Lifetime} ${Math.round(horz)} ${Math.round(vert)}`);
-    // negative z is towards sunrise
-    // 270 is towards sunrise
-    // price -0.0390476137 means they will pay me $0.07 to take pollutant
-    // price of 0.55 means you need to pay $1.07, or can sell for $0.37
-    add_metric("trader_lifetime", { name: trader.ContactName, ref: trader.ReferenceId }, trader.Lifetime);
-    for (const item of trader.TradeItemData.TradingItemDat) {
-      var prefab = item.PrefabHash;
-      if (hash_lookup[prefab]) prefab = hash_lookup[prefab];
-      if (prefab == 0) {
-        prefab = gas_item_to_string(item);
-        add_metric("trade_item_price", { prefab: prefab, ref: trader.ReferenceId }, item.TradeValue);
-      } else {
-        add_metric("trade_item_price", { prefab: prefab, ref: trader.ReferenceId }, item.TradeValue);
-      }
-      console.log("  ", prefab, "buy value", saferound(item.TradeValue * 2.14), "sell value", saferound(item.TradeValue * 0.585), "max quant", item.MaxQuantity, "quant to purchase", item.QuantityToPurchase);
-      if (prefab == 0) {
-        console.log(item);
+  if (doc.WorldData.StationContacts) {
+    // doc.WorldData.StationContacts becomes "" if there are no StationContactData
+    doc.WorldData.StationContacts.StationContactData = fixarray(doc.WorldData.StationContacts.StationContactData);
+    for (const trader of doc.WorldData.StationContacts.StationContactData) {
+      var horz = 180 - (Math.atan2(trader.Angle.z, trader.Angle.x) * 180 / Math.PI);
+      var dist = Math.sqrt((trader.Angle.x*trader.Angle.x)+(trader.Angle.z*trader.Angle.z));
+      var vert = 90 - Math.atan2(trader.Angle.y, dist) * 180 / Math.PI;
+      console.log(`${trader.ContactName} ${trader.Tier} ${trader.ContactType} ${trader.Lifetime} ${Math.round(horz)} ${Math.round(vert)}`);
+      // negative z is towards sunrise
+      // 270 is towards sunrise
+      // price -0.0390476137 means they will pay me $0.07 to take pollutant
+      // price of 0.55 means you need to pay $1.07, or can sell for $0.37
+      add_metric("trader_lifetime", { name: trader.ContactName, ref: trader.ReferenceId }, trader.Lifetime);
+      for (const item of trader.TradeItemData.TradingItemDat) {
+        var prefab = item.PrefabHash;
+        if (hash_lookup[prefab]) prefab = hash_lookup[prefab];
+        if (prefab == 0) {
+          prefab = gas_item_to_string(item);
+          add_metric("trade_item_price", { prefab: prefab, ref: trader.ReferenceId }, item.TradeValue);
+        } else {
+          add_metric("trade_item_price", { prefab: prefab, ref: trader.ReferenceId }, item.TradeValue);
+        }
+        console.log("  ", prefab, "buy value", saferound(item.TradeValue * 2.14), "sell value", saferound(item.TradeValue * 0.585), "max quant", item.MaxQuantity, "quant to purchase", item.QuantityToPurchase);
+        if (prefab == 0) {
+          console.log(item);
+        }
       }
     }
+  } else {
+    console.log("  save bugged, all traders ran away");
   }
 }
 
