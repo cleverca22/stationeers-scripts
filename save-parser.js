@@ -243,11 +243,10 @@ function doit(worldxmo) {
         if (hash_lookup[prefab]) {
           prefab = hash_lookup[prefab];
           prices[prefab] = item.TradeValue;
+          add_metric("trade_item_price", { prefab: prefab, ref: trader.ReferenceId }, item.TradeValue);
         }
         if (prefab == 0) {
           prefab = gas_item_to_string(item);
-          add_metric("trade_item_price", { prefab: prefab, ref: trader.ReferenceId }, item.TradeValue);
-        } else {
           add_metric("trade_item_price", { prefab: prefab, ref: trader.ReferenceId }, item.TradeValue);
         }
         console.log("  ", prefab, "buy value", saferound(item.TradeValue * 2.14), "sell value", saferound(item.TradeValue * 0.585), "max quant", item.MaxQuantity, "quant to purchase", item.QuantityToPurchase);
