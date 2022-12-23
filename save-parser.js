@@ -126,12 +126,15 @@ function doit(worldxmo) {
       }
     }
     if (thing.PrefabName == "StructureVendingMachine") {
-      metrics['vending_machine_item_count{name="'+thing.CustomName+'"}'] = child_list[thing.ReferenceId].length;
+      if (child_list[thing.ReferenceId] != undefined) {
+        metrics['vending_machine_item_count{name="'+thing.CustomName+'"}'] = child_list[thing.ReferenceId].length;
+      }
     }
     if (thing.PrefabName == "Fertilizer") {
       console.log("fert count",thing.Quantity, "cycles", thing.Cycles, "harvest boost", thing.HarvestBoost, "growth speed", thing.GrowthSpeed);
     }
     if (thing.PrefabName == "ItemIntegratedCircuit10") {
+      //fs.writeFileSync(`scripts/${thing.ReferenceId}.ic10`, thing.SourceCode);
       //if (thing.CustomName && (thing.CustomName.length > 0)) console.log(thing.CustomName);
       var aliases = [];
       if (thing.NewAliasesKeys) {
@@ -204,9 +207,23 @@ function doit(worldxmo) {
   // example of creating a graph of all IC10 stuff
   //fs.writeFileSync("connections.dot", graph.join("\n"));
   for (const atmos of doc.WorldData.Atmospheres.AtmosphereSaveData) {
+    var mols = totalmols(atmos);
+    var roughtemp = atmos.Energy / (mols * 21.1);
+    var roughpressure = (mols * 8.3144 * roughtemp) / atmos.Volume;
+    //if (mols > 100000) {
+    //if ((atmos.Position.x == 1) && (atmos.Position.z == -23)) {
+    if (atmos.Volume != 8000) {
+      //if (roughtemp > 2000) {
+      if (roughpressure > 10000) {
+        var name = 'UNK';
+        if (atmos.ThingReferenceId && reference_lut[atmos.ThingReferenceId]) name = reference_lut[atmos.ThingReferenceId].PrefabName;
+        if (name.indexOf("Canister") != -1) {
+          console.log(`${name} ${atmos.ReferenceId} at X ${atmos.Position.x} Y ${atmos.Position.y} Z ${atmos.Position.z} has ${mols} mols of gas and a volume of ${atmos.Volume} L, ${roughtemp} K ${roughpressure} kPa?`);
+        }
+      }
+    }
     if (atmos.ThingReferenceId) {
       var parrent = reference_lut[atmos.ThingReferenceId];
-      var mols = totalmols(atmos);
       if (mols > 0) {
         add_metric("mols", { PrefabName: parrent.PrefabName, element: "Oxygen" }, atmos.Oxygen);
         add_metric("mols", { PrefabName: parrent.PrefabName, element: "Volatiles" }, atmos.Volatiles);
@@ -238,20 +255,22 @@ function doit(worldxmo) {
       // price -0.0390476137 means they will pay me $0.07 to take pollutant
       // price of 0.55 means you need to pay $1.07, or can sell for $0.37
       add_metric("trader_lifetime", { name: trader.ContactName, ref: trader.ReferenceId }, trader.Lifetime);
-      for (const item of trader.TradeItemData.TradingItemDat) {
-        var prefab = item.PrefabHash;
-        if (hash_lookup[prefab]) {
-          prefab = hash_lookup[prefab];
-          prices[prefab] = item.TradeValue;
-          add_metric("trade_item_price", { prefab: prefab, ref: trader.ReferenceId }, item.TradeValue);
-        }
-        if (prefab == 0) {
-          prefab = gas_item_to_string(item);
-          add_metric("trade_item_price", { prefab: prefab, ref: trader.ReferenceId }, item.TradeValue);
-        }
-        console.log("  ", prefab, "buy value", saferound(item.TradeValue * 2.14), "sell value", saferound(item.TradeValue * 0.585), "max quant", item.MaxQuantity, "quant to purchase", item.QuantityToPurchase);
-        if (prefab == 0) {
-          console.log(item);
+      if (typeof(trader.TradeItemData) == 'object') {
+        for (const item of trader.TradeItemData.TradingItemDat) {
+          var prefab = item.PrefabHash;
+          if (hash_lookup[prefab]) {
+            prefab = hash_lookup[prefab];
+            prices[prefab] = item.TradeValue;
+            add_metric("trade_item_price", { prefab: prefab, ref: trader.ReferenceId }, item.TradeValue);
+          }
+          if (prefab == 0) {
+            prefab = gas_item_to_string(item);
+            add_metric("trade_item_price", { prefab: prefab, ref: trader.ReferenceId }, item.TradeValue);
+          }
+          //console.log("  ", prefab, "buy value", saferound(item.TradeValue * 2.14), "sell value", saferound(item.TradeValue * 0.585), "max quant", item.MaxQuantity, "quant to purchase", item.QuantityToPurchase);
+          if (prefab == 0) {
+            console.log(item);
+          }
         }
       }
     }
@@ -281,6 +300,8 @@ function saferound(input) {
 
 var worldxml = process.argv[2];
 var oldmtime = 0;
+var port = 8000;
+if (process.argv.length > 3) port = parseInt(process.argv[3]);
 function scan() {
   var stat = fs.statSync(worldxml);
   if (stat.mtimeMs != oldmtime) {
@@ -288,6 +309,7 @@ function scan() {
     doit(worldxml);
   }
   oldmtime = stat.mtimeMs;
+  if (port == 0) process.exit(0);
 }
 setInterval(scan, 5000);
 scan();
@@ -301,6 +323,4 @@ const server = http.createServer((req, res) => {
   res.end(lines.join("\n"));
 });
 
-var port = 8000;
-if (process.argv.length > 3) port = parseInt(process.argv[3]);
 server.listen(port);
