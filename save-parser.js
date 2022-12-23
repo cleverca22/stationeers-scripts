@@ -1,7 +1,7 @@
 const fs = require("fs");
 const { XMLParser, XMLBuilder, XMLValidator} = require("fast-xml-parser");
 var CRC32 = require('crc-32');
-const items = JSON.parse(fs.readFileSync("itemlist.json"));
+var items = JSON.parse(fs.readFileSync("itemlist.json"));
 var hash_lookup = {};
 var metrics = {};
 var child_list = {};
@@ -85,7 +85,11 @@ function doit(worldxmo) {
     reference_lut[thing.ReferenceId] = thing;
     if (thing.ParentReferenceId) graph.push(thing.ParentReferenceId + " -> " + thing.ReferenceId);
   }
-  if (missing_objects.length) console.log(missing_objects);
+  if (missing_objects.length) {
+    console.log(missing_objects);
+    items = items.concat(missing_objects).sort();
+    fs.writeFileSync("itemlist.json", JSON.stringify(items, null, 2));
+  }
   for (const thing of doc.WorldData.Things.ThingSaveData) {
     if (thing.Quantity) {
       add_metric("item_count", { prefab: thing.PrefabName }, thing.Quantity);
