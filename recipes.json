@@ -1,0 +1,121 @@
+{
+  "ItemIronIngot":[
+    { "ItemIronOre":1 }
+  ],
+  "ItemLeadIngot":[
+    { "ItemLeadOre":1 }
+  ],
+  "ItemSteelIngot":[
+    {
+      "ItemIronIngot":0.75,
+      "debug":true,
+      "ItemCharcoal": 0.25
+    },
+    {
+      "ItemIronIngot":0.75,
+      "debug":true,
+      "ItemCoalOre":0.25
+    }
+  ],
+  "ItemSolderIngot":[
+    {
+      "ItemIronIngot": 0.5,
+      "ItemLeadIngot": 0.5
+    }
+  ],
+  "ItemElectrumIngot":[
+    {
+      "ItemGoldIngot": 0.5,
+      "ItemSilverIngot": 0.5
+    }
+  ],
+  "ItemHastelloyIngot":[
+    {
+      "ItemSilverIngot":0.5,
+      "ItemNickelIngot":0.25,
+      "debug":true,
+      "ItemCobaltOre":0.25
+    }
+  ],
+  "ItemConstantanIngot":[
+    {
+      "ItemCopperIngot": 0.5,
+      "ItemNickelIngot": 0.5
+    }
+  ],
+  "ItemInvarIngot":[
+    {
+      "ItemIronIngot": 0.5,
+      "ItemNickelIngot": 0.5
+    }
+  ],
+  "ItemStelliteIngot":[
+    {
+      "debug": true,
+      "ItemSilverIngot": 1,
+      "ItemCobaltOre": 1,
+      "ItemSiliconIngot": 2
+    }
+  ],
+  "ItemInconelIngot":[
+    {
+      "ItemSteelIngot": 1,
+      "ItemNickelIngot": 1,
+      "ItemGoldIngot": 2
+    }
+  ],
+  "ItemIronSheets":[
+    { "ItemIronIngot": 1 }
+  ],
+  "ItemKitWallIron":[
+    { "ItemIronIngot": 1 }
+  ],
+  "ItemKitFurniture":[
+    {
+      "ItemIronIngot":20,
+      "ItemCopperIngot":5
+    }
+  ],
+  "ItemKitRecycler":[
+    {
+      "ItemIronIngot":20,
+      "ItemCopperIngot":10
+    }
+  ],
+  "ItemKitLocker":[
+    { "ItemIronIngot": 5 }
+  ],
+  "ItemGasFilterOxygen":[
+    { "ItemIronIngot": 5 }
+  ],
+  "ItemKitAirlock":[
+    {
+      "ItemSteelIngot": 15,
+      "ItemCopperIngot": 5,
+      "ItemGoldIngot": 5
+    }
+  ],
+  "ItemGrenade":[
+    {
+      "ItemLeadIngot":25,
+      "ItemSteelIngot":25,
+      "ItemCopperIngot":15,
+      "ItemGoldIngot":1
+    }
+  ],
+  "ItemNVG":[
+    {
+      "ItemHastelloyIngot":10,
+      "ItemSteelIngot":5,
+      "debug":true,
+      "ItemSiliconIngot":5
+    }
+  ],
+  "AccessCardBlack":[
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 1
+    }
+  ]
+}
