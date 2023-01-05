@@ -153,7 +153,7 @@ function doit(worldxmo) {
       for (var i=0; i<thing.Registers.length; i++) {
         var names = '';
         if (aliases[i]) names = ` aka ${aliases[i].join(",")}`;
-        //console.log(`r${i}${names} == ${thing.Registers[i]}`);
+        //console.log(`r${i}${names} == ${lookup_hash(thing.Registers[i])}`);
       }
       if (thing.ParentReferenceId) {
         var housing = reference_lut[thing.ParentReferenceId];
@@ -187,6 +187,15 @@ function doit(worldxmo) {
           var obj = decompress(entry);
           //console.log("  queue["+i+"] == " + obj.b + " * " + lookup_hash(obj.a) + " -> " + obj.c);
         }
+      }
+      if (/Silo/.exec(thing.CustomName) || /define MaxFillLimit 500/.exec(thing.SourceCode)) {
+        console.log(`${thing.CustomName} is ID# ${thing.Registers[11]}, it holds ${lookup_hash(thing.Registers[14])}, stack size is ${thing.Registers[10]}`);
+        var housing = reference_lut[thing.ParentReferenceId];
+        var intmem = reference_lut[housing.DeviceIDs[0]];
+        var sorter = reference_lut[housing.DeviceIDs[1]];
+        var silo = reference_lut[housing.DeviceIDs[2]];
+        var intmemresp = reference_lut[housing.DeviceIDs[3]];
+        console.log(silo.CustomName);
       }
       if (/Router/.exec(thing.CustomName)) {
         console.log("  ID# " + thing.Registers[12]);
