@@ -33,8 +33,8 @@ function fixnum(n) {
 }
 
 function fixarray(a) {
-  if (typeof(a) == "object") return a;
-  else return a;
+  if (a.length != undefined) return a;
+  else return [a];
 }
 
 function metrics_increment(key, value) {
@@ -114,7 +114,9 @@ function doit(worldxmo) {
     }
     if (thing.PrefabName == "StructureSDBSilo") {
       if (thing.AllStoredItems != undefined) {
+        thing.AllStoredItems = fixarray(thing.AllStoredItems);
         // TODO, if list only has 1 element, its not a list!
+        console.log("silo contents", thing.AllStoredItems);
         for (const child of thing.AllStoredItems) {
           //console.log(child.DynamicThing);
           if (child.DynamicThing.Quantity) {
@@ -191,14 +193,14 @@ function doit(worldxmo) {
         for (var i=0; i<100; i++) {
           var entry = thing.Stack[i];
           if (entry == 0) break;
-          //if (i == thing.Registers[9]) console.log("  rest are expired");
+          if (i == thing.Registers[9]) console.log("  rest are expired");
           var obj = decompress(entry);
-          //console.log("  queue["+i+"] == " + obj.b + " * " + lookup_hash(obj.a) + " -> " + obj.c);
+          console.log("  queue["+i+"] == " + obj.b + " * " + lookup_hash(obj.a) + " -> " + obj.c);
         }
         for (var i=0; i<5; i++) {
           var entry = thing.Stack[490+i];
           if (entry == undefined) break;
-          //console.log("  d"+i+" is addr " + entry);
+          console.log("  d"+i+" is addr " + entry);
         }
       }
     }
@@ -206,6 +208,13 @@ function doit(worldxmo) {
   graph.push("}");
   // example of creating a graph of all IC10 stuff
   //fs.writeFileSync("connections.dot", graph.join("\n"));
+
+  for (const room of doc.WorldData.Rooms.Room) {
+    room.Grids.Grid = fixarray(room.Grids.Grid);
+    console.log(room.RoomId, room.Grids.Grid.length);
+    add_metric("room_size", { roomid: room.RoomId }, room.Grids.Grid.length);
+  }
+
   for (const atmos of doc.WorldData.Atmospheres.AtmosphereSaveData) {
     var mols = totalmols(atmos);
     var roughtemp = atmos.Energy / (mols * 21.1);

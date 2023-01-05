@@ -27,6 +27,7 @@ for (const name in recipes) {
     for (const item in recipe) {
       if (item == "debug") continue;
       const quant = recipe[item];
+      if (results[item] == undefined) continue;
       const matcost = results[item].cost * quant;
       if (recipe.debug || (matcost == 0)) {
         console.log(`  ${quant} x ${item} costs ${matcost}`)
@@ -63,12 +64,16 @@ for (const name in results) {
       console.log(`profit found, ${name} can be crafted for ${results[name].craftcost} or bought for ${results[name].tradeCost}`);
     }
   }
-  if (!results[name].hasRecipe) lacking_recipe.push(name);
+  if (!results[name].hasRecipe) {
+    if (name.indexOf("Structure") == 0) continue;
+    if (name.indexOf("Wreckage") != -1) continue;
+    lacking_recipe.push(name);
+  }
   if (!results[name].hasTradePrice) lacking_trace_price.push(name);
   if ((results[name].cost != null) && (results[name].cost <= 0)) {
     //console.log(`${name} can be bought for ${results[name].cost}`);
   }
 }
 console.log(JSON.stringify(results.ItemSteelIngot));
-//console.log("items lacking recipes:", JSON.stringify(lacking_recipe));
-console.log("items lacking trace prices:", JSON.stringify(lacking_trace_price));
+console.log("items lacking recipes:", JSON.stringify(lacking_recipe));
+//console.log("items lacking trace prices:", JSON.stringify(lacking_trace_price));

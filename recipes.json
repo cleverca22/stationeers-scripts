@@ -1,121 +1,2559 @@
 {
-  "ItemIronIngot":[
-    { "ItemIronOre":1 }
-  ],
-  "ItemLeadIngot":[
-    { "ItemLeadOre":1 }
-  ],
-  "ItemSteelIngot":[
+  "ItemAstroloyIngot": [
     {
-      "ItemIronIngot":0.75,
-      "debug":true,
-      "ItemCharcoal": 0.25
+      "ItemSteelIngot": 0.5,
+      "ItemCopperIngot": 0.25,
+      "ItemCobaltOre": 0.25
     },
     {
-      "ItemIronIngot":0.75,
-      "debug":true,
-      "ItemCoalOre":0.25
+      "ItemAstroloyIngot": 1
     }
   ],
-  "ItemSolderIngot":[
+  "ItemHastelloyIngot": [
     {
-      "ItemIronIngot": 0.5,
-      "ItemLeadIngot": 0.5
+      "ItemSilverIngot": 0.5,
+      "ItemNickelIngot": 0.25,
+      "ItemCobaltOre": 0.25
+    },
+    {
+      "ItemHastelloyIngot": 1
     }
   ],
-  "ItemElectrumIngot":[
+  "ItemInconelIngot": [
     {
       "ItemGoldIngot": 0.5,
-      "ItemSilverIngot": 0.5
+      "ItemNickelIngot": 0.25,
+      "ItemSteelIngot": 0.25
+    },
+    {
+      "ItemInconelIngot": 1
     }
   ],
-  "ItemHastelloyIngot":[
+  "ItemWaspaloyIngot": [
     {
-      "ItemSilverIngot":0.5,
-      "ItemNickelIngot":0.25,
-      "debug":true,
-      "ItemCobaltOre":0.25
+      "ItemLeadIngot": 0.5,
+      "ItemNickelIngot": 0.25,
+      "ItemSilverIngot": 0.25
+    },
+    {
+      "ItemWaspaloyIngot": 1
     }
   ],
-  "ItemConstantanIngot":[
+  "ItemStelliteIngot": [
     {
-      "ItemCopperIngot": 0.5,
-      "ItemNickelIngot": 0.5
+      "ItemSiliconIngot": 0.5,
+      "ItemSilverIngot": 0.25,
+      "ItemCobaltOre": 0.25
+    },
+    {
+      "ItemStelliteIngot": 1
     }
   ],
-  "ItemInvarIngot":[
+  "ItemIronFrames": [
     {
-      "ItemIronIngot": 0.5,
-      "ItemNickelIngot": 0.5
+      "ItemIronIngot": 4
     }
   ],
-  "ItemStelliteIngot":[
+  "ItemIronSheets": [
     {
-      "debug": true,
-      "ItemSilverIngot": 1,
-      "ItemCobaltOre": 1,
+      "ItemIronIngot": 1
+    }
+  ],
+  "ItemPlasticSheets": [
+    {
+      "ItemSiliconIngot": 0.5
+    }
+  ],
+  "ItemGlassSheets": [
+    {
       "ItemSiliconIngot": 2
     }
   ],
-  "ItemInconelIngot":[
+  "ItemStelliteGlassSheets": [
     {
-      "ItemSteelIngot": 1,
-      "ItemNickelIngot": 1,
+      "ItemSiliconIngot": 2,
+      "ItemStelliteIngot": 1
+    }
+  ],
+  "ItemSteelSheets": [
+    {
+      "ItemSteelIngot": 0.5
+    }
+  ],
+  "ItemSteelFrames": [
+    {
+      "ItemSteelIngot": 2
+    }
+  ],
+  "ItemKitWallIron": [
+    {
+      "ItemIronIngot": 1
+    }
+  ],
+  "ItemKitRailing": [
+    {
+      "ItemIronIngot": 1
+    }
+  ],
+  "ItemKitCompositeCladding": [
+    {
+      "ItemIronIngot": 1
+    }
+  ],
+  "ItemKitWall": [
+    {
+      "ItemSteelIngot": 1
+    }
+  ],
+  "ItemKitReinforcedWindows": [
+    {
+      "ItemSteelIngot": 2
+    }
+  ],
+  "ItemKitWindowShutter": [
+    {
+      "ItemSteelIngot": 2,
+      "ItemIronIngot": 1
+    }
+  ],
+  "ItemKitLadder": [
+    {
+      "ItemIronIngot": 2
+    }
+  ],
+  "ItemKitPipe": [
+    {
+      "ItemIronIngot": 0.5
+    },
+    {
+      "ItemIronIngot": 0.5
+    }
+  ],
+  "ItemCableCoil": [
+    {
+      "ItemCopperIngot": 0.5
+    },
+    {
+      "ItemCopperIngot": 0.5
+    }
+  ],
+  "ItemKitFurnace": [
+    {
+      "ItemIronIngot": 30,
+      "ItemCopperIngot": 10
+    }
+  ],
+  "ItemKitArcFurnace": [
+    {
+      "ItemIronIngot": 20,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "ItemKitElectronicsPrinter": [
+    {
+      "ItemIronIngot": 20,
+      "ItemCopperIngot": 10,
       "ItemGoldIngot": 2
     }
   ],
-  "ItemIronSheets":[
-    { "ItemIronIngot": 1 }
-  ],
-  "ItemKitWallIron":[
-    { "ItemIronIngot": 1 }
-  ],
-  "ItemKitFurniture":[
+  "ItemKitBlastDoor": [
     {
-      "ItemIronIngot":20,
-      "ItemCopperIngot":5
+      "ItemSteelIngot": 15,
+      "ItemCopperIngot": 3
     }
   ],
-  "ItemKitRecycler":[
+  "ItemKitFurniture": [
     {
-      "ItemIronIngot":20,
-      "ItemCopperIngot":10
+      "ItemIronIngot": 20,
+      "ItemCopperIngot": 5
     }
   ],
-  "ItemKitLocker":[
-    { "ItemIronIngot": 5 }
+  "ItemKitTables": [
+    {
+      "ItemIronIngot": 20,
+      "ItemCopperIngot": 5
+    }
   ],
-  "ItemGasFilterOxygen":[
-    { "ItemIronIngot": 5 }
+  "ItemKitChairs": [
+    {
+      "ItemIronIngot": 20,
+      "ItemCopperIngot": 5
+    }
   ],
-  "ItemKitAirlock":[
+  "ItemKitBeds": [
+    {
+      "ItemIronIngot": 20,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "ItemKitSorter": [
+    {
+      "ItemIronIngot": 10,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "ItemKitHydraulicPipeBender": [
+    {
+      "ItemIronIngot": 20,
+      "ItemCopperIngot": 10,
+      "ItemGoldIngot": 2
+    }
+  ],
+  "ItemKitAutolathe": [
+    {
+      "ItemIronIngot": 20,
+      "ItemCopperIngot": 10,
+      "ItemGoldIngot": 2
+    }
+  ],
+  "ItemKitDoor": [
+    {
+      "ItemIronIngot": 7,
+      "ItemCopperIngot": 3
+    }
+  ],
+  "ItemKitInteriorDoors": [
+    {
+      "ItemIronIngot": 5,
+      "ItemCopperIngot": 3
+    }
+  ],
+  "ItemWallLight": [
+    {
+      "ItemIronIngot": 1,
+      "ItemSiliconIngot": 1,
+      "ItemCopperIngot": 2
+    },
+    {
+      "ItemIronIngot": 1,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemKitWallArch": [
+    {
+      "ItemSteelIngot": 1
+    }
+  ],
+  "ItemKitWallFlat": [
+    {
+      "ItemSteelIngot": 1
+    }
+  ],
+  "ItemKitWallGeometry": [
+    {
+      "ItemSteelIngot": 1
+    }
+  ],
+  "ItemKitWallPadded": [
+    {
+      "ItemSteelIngot": 1
+    }
+  ],
+  "ItemKitLocker": [
+    {
+      "ItemIronIngot": 5
+    }
+  ],
+  "ItemKitSign": [
+    {
+      "ItemIronIngot": 3
+    }
+  ],
+  "ItemKitStairs": [
+    {
+      "ItemIronIngot": 15
+    }
+  ],
+  "ItemKitStacker": [
+    {
+      "ItemIronIngot": 10,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemEmptyCan": [
+    {
+      "ItemSteelIngot": 1
+    }
+  ],
+  "ItemKitChute": [
+    {
+      "ItemIronIngot": 3
+    },
+    {
+      "ItemIronIngot": 3
+    }
+  ],
+  "ItemKitStandardChute": [
+    {
+      "ItemIronIngot": 3,
+      "ItemConstantanIngot": 2,
+      "ItemElectrumIngot": 2
+    },
+    {
+      "ItemIronIngot": 3,
+      "ItemConstantanIngot": 2,
+      "ItemElectrumIngot": 2
+    }
+  ],
+  "ItemKitSDBHopper": [
+    {
+      "ItemIronIngot": 15
+    }
+  ],
+  "ItemKitCompositeFloorGrating": [
+    {
+      "ItemIronIngot": 1
+    }
+  ],
+  "ItemKitToolManufactory": [
+    {
+      "ItemIronIngot": 20,
+      "ItemCopperIngot": 10
+    }
+  ],
+  "ItemKitRecycler": [
+    {
+      "ItemIronIngot": 20,
+      "ItemCopperIngot": 10
+    }
+  ],
+  "ItemKitCentrifuge": [
+    {
+      "ItemIronIngot": 20,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "KitStructureCombustionCentrifuge": [
+    {
+      "ItemSteelIngot": 20,
+      "ItemConstantanIngot": 5,
+      "ItemInvarIngot": 10
+    }
+  ],
+  "ItemKitDeepMiner": [
+    {
+      "ItemSteelIngot": 30,
+      "ItemConstantanIngot": 5,
+      "ItemInvarIngot": 5
+    }
+  ],
+  "ItemKitCrateMount": [
+    {
+      "ItemIronIngot": 10
+    }
+  ],
+  "ItemKitCrate": [
+    {
+      "ItemIronIngot": 10
+    }
+  ],
+  "ItemKitCrateMkII": [
+    {
+      "ItemIronIngot": 10,
+      "ItemGoldIngot": 5
+    }
+  ],
+  "ItemSpaceHelmet": [
+    {
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 2
+    },
+    {
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemEvaSuit": [
+    {
+      "ItemIronIngot": 5,
+      "ItemCopperIngot": 5
+    },
+    {
+      "ItemIronIngot": 5,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemEggCarton": [
+    {
+      "ItemSiliconIngot": 2
+    }
+  ],
+  "ItemCoffeeMug": [
+    {
+      "ItemIronIngot": 1
+    }
+  ],
+  "ItemKitFlagODA": [
+    {
+      "ItemIronIngot": 8
+    }
+  ],
+  "ItemKitRespawnPointWallMounted": [
+    {
+      "ItemIronIngot": 3,
+      "ItemCopperIngot": 1
+    }
+  ],
+  "ItemKitGrowLight": [
+    {
+      "ItemCopperIngot": 5,
+      "ItemSteelIngot": 5,
+      "ItemElectrumIngot": 10
+    }
+  ],
+  "ItemBatteryCell": [
+    {
+      "ItemIronIngot": 2,
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "ItemBatteryCellLarge": [
+    {
+      "ItemSteelIngot": 5,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 10
+    }
+  ],
+  "Battery_Wireless_cell": [
+    {
+      "ItemIronIngot": 2,
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 10
+    }
+  ],
+  "Battery_Wireless_cell_Big": [
+    {
+      "ItemSteelIngot": 5,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 15
+    }
+  ],
+  "ItemKitPowerTransmitter": [
+    {
+      "ItemSteelIngot": 3,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 7
+    }
+  ],
+  "ItemKitPowerTransmitterOmni": [
+    {
+      "ItemSteelIngot": 4,
+      "ItemGoldIngot": 4,
+      "ItemCopperIngot": 8
+    }
+  ],
+  "ItemBatteryCellNuclear": [
+    {
+      "ItemSteelIngot": 5,
+      "ItemInconelIngot": 5,
+      "ItemAstroloyIngot": 10
+    }
+  ],
+  "ItemBatteryCharger": [
+    {
+      "ItemIronIngot": 10,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "ItemBatteryChargerSmall": [
+    {
+      "ItemIronIngot": 5,
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "CartridgeAtmosAnalyser": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "CartridgePlantAnalyser": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "CartridgeElectronicReader": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "CartridgeMedicalAnalyser": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "CartridgeNetworkAnalyser": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "CartridgeOreScanner": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "ItemSoundCartridgeBass": [
+    {
+      "ItemSiliconIngot": 2,
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemSoundCartridgeDrums": [
+    {
+      "ItemSiliconIngot": 2,
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemSoundCartridgeLeads": [
+    {
+      "ItemSiliconIngot": 2,
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemSoundCartridgeSynth": [
+    {
+      "ItemSiliconIngot": 2,
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "CartridgeOreScannerColor": [
+    {
+      "ItemIronIngot": 1,
+      "ItemCopperIngot": 5,
+      "ItemGoldIngot": 5,
+      "ItemSiliconIngot": 5,
+      "ItemSolderIngot": 5,
+      "ItemElectrumIngot": 10,
+      "ItemInvarIngot": 10,
+      "ItemConstantanIngot": 5
+    }
+  ],
+  "ItemKitAIMeE": [
+    {
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5,
+      "ItemSteelIngot": 22,
+      "ItemElectrumIngot": 15,
+      "ItemInvarIngot": 7,
+      "ItemConstantanIngot": 8,
+      "ItemAstroloyIngot": 10
+    }
+  ],
+  "ItemKitStructureLaunchPad": [
+    {
+      "ItemGoldIngot": 15,
+      "ItemCopperIngot": 15,
+      "ItemSteelIngot": 30,
+      "ItemElectrumIngot": 15,
+      "ItemInvarIngot": 20,
+      "ItemConstantanIngot": 5,
+      "ItemInconelIngot": 25
+    }
+  ],
+  "ItemKitStructureModularRocketEngine01": [
+    {
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 40,
+      "ItemSteelIngot": 25,
+      "ItemElectrumIngot": 15,
+      "ItemInvarIngot": 30,
+      "ItemConstantanIngot": 10,
+      "ItemStelliteIngot": 30
+    }
+  ],
+  "ItemKitStructureModularRocketFueltank01": [
+    {
+      "ItemGoldIngot": 12,
+      "ItemCopperIngot": 20,
+      "ItemSteelIngot": 40,
+      "ItemElectrumIngot": 20,
+      "ItemInvarIngot": 60,
+      "ItemConstantanIngot": 20,
+      "ItemAstroloyIngot": 38
+    }
+  ],
+  "ItemKitModularRocketOreMining": [
+    {
+      "ItemCopperIngot": 15,
+      "ItemSteelIngot": 30,
+      "ItemElectrumIngot": 25,
+      "ItemConstantanIngot": 15,
+      "ItemStelliteIngot": 20
+    }
+  ],
+  "ItemKitModularRocketGasMining": [
+    {
+      "ItemCopperIngot": 15,
+      "ItemSteelIngot": 30,
+      "ItemElectrumIngot": 25,
+      "ItemAstroloyIngot": 25
+    }
+  ],
+  "ItemKitModularRocketIceMining": [
+    {
+      "ItemCopperIngot": 15,
+      "ItemSteelIngot": 30,
+      "ItemElectrumIngot": 25,
+      "ItemInvarIngot": 15,
+      "ItemAstroloyIngot": 25
+    }
+  ],
+  "ItemKitModularRocketScrapMining": [
+    {
+      "ItemCopperIngot": 15,
+      "ItemSteelIngot": 30,
+      "ItemElectrumIngot": 20,
+      "ItemStelliteIngot": 20
+    }
+  ],
+  "ItemKitModularRocketCoupling": [
+    {
+      "ItemCopperIngot": 10,
+      "ItemSteelIngot": 15,
+      "ItemElectrumIngot": 20,
+      "ItemInvarIngot": 8,
+      "ItemConstantanIngot": 5
+    }
+  ],
+  "ItemKitModularRocketOreStorage": [
+    {
+      "ItemGoldIngot": 10,
+      "ItemSteelIngot": 20,
+      "ItemElectrumIngot": 25,
+      "ItemInvarIngot": 15,
+      "ItemAstroloyIngot": 25
+    }
+  ],
+  "ItemKitStructureModularRocketCargo01": [
+    {
+      "ItemGoldIngot": 15,
+      "ItemSteelIngot": 30,
+      "ItemElectrumIngot": 25,
+      "ItemInvarIngot": 15,
+      "ItemStelliteIngot": 20
+    }
+  ],
+  "ItemKitStructureModularRocketCommand01": [
+    {
+      "ItemCopperIngot": 35,
+      "ItemGoldIngot": 20,
+      "ItemSteelIngot": 30,
+      "ItemSolderIngot": 15,
+      "ItemElectrumIngot": 35,
+      "ItemInvarIngot": 30,
+      "ItemStelliteIngot": 35,
+      "ItemInconelIngot": 15
+    }
+  ],
+  "ItemKitModularRocketAutomation": [
+    {
+      "ItemCopperIngot": 40,
+      "ItemGoldIngot": 10,
+      "ItemSteelIngot": 25,
+      "ItemSolderIngot": 15,
+      "ItemElectrumIngot": 30,
+      "ItemInvarIngot": 30,
+      "ItemStelliteIngot": 25,
+      "ItemInconelIngot": 10
+    }
+  ],
+  "ItemKitFridgeSmall": [
+    {
+      "ItemIronIngot": 10,
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "ItemKitFridgeBig": [
+    {
+      "ItemIronIngot": 20,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 10,
+      "ItemSteelIngot": 15
+    }
+  ],
+  "CartridgeConfiguration": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "CartridgeTracker": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "CartridgeGPS": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "CircuitboardAirControl": [
+    {
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "CircuitboardAdvAirlockControl": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "CircuitboardAirlockControl": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "CircuitboardDoorControl": [
+    {
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "CircuitboardGasDisplay": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "CircuitboardModeControl": [
+    {
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "CircuitboardPowerControl": [
+    {
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "CircuitboardShipDisplay": [
+    {
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "CircuitboardSolarControl": [
+    {
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "CircuitboardGraphDisplay": [
+    {
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "CircuitboardHashDisplay": [
+    {
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "ItemAreaPowerControl": [
+    {
+      "ItemIronIngot": 5,
+      "ItemCopperIngot": 2,
+      "ItemSolderIngot": 3
+    }
+  ],
+  "ItemCableAnalyser": [
+    {
+      "ItemIronIngot": 1,
+      "ItemCopperIngot": 2,
+      "ItemSiliconIngot": 2
+    }
+  ],
+  "ItemCableCoilHeavy": [
+    {
+      "ItemGoldIngot": 0.5,
+      "ItemCopperIngot": 0.5
+    }
+  ],
+  "ItemCableFuse": [
+    {
+      "ItemIronIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "ItemDataDisk": [
+    {
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "ItemFlashingLight": [
+    {
+      "ItemIronIngot": 2,
+      "ItemCopperIngot": 3
+    }
+  ],
+  "ItemKitSecurityPrinter": [
+    {
+      "ItemGoldIngot": 20,
+      "ItemCopperIngot": 20,
+      "ItemSteelIngot": 20
+    }
+  ],
+  "ItemKitBattery": [
+    {
+      "ItemGoldIngot": 20,
+      "ItemCopperIngot": 20,
+      "ItemSteelIngot": 20
+    }
+  ],
+  "ItemKitBatteryLarge": [
+    {
+      "ItemGoldIngot": 35,
+      "ItemCopperIngot": 35,
+      "ItemSteelIngot": 35,
+      "ItemElectrumIngot": 10,
+      "ItemSiliconIngot": 5,
+      "ItemStelliteIngot": 2
+    }
+  ],
+  "ItemKitComputer": [
+    {
+      "ItemIronIngot": 5,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 10
+    }
+  ],
+  "ItemKitConsole": [
+    {
+      "ItemIronIngot": 2,
+      "ItemGoldIngot": 3,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "ItemKitLogicInputOutput": [
+    {
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 1
+    }
+  ],
+  "ItemKitLogicMemory": [
+    {
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 1
+    }
+  ],
+  "ItemKitSpeaker": [
+    {
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 1,
+      "ItemSteelIngot": 5
+    }
+  ],
+  "ItemKitLogicProcessor": [
+    {
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemKitMusicMachines": [
+    {
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemKitLogicTransmitter": [
+    {
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 1,
+      "ItemElectrumIngot": 3,
+      "ItemSiliconIngot": 5
+    }
+  ],
+  "ItemKitLogicSwitch": [
+    {
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 1
+    }
+  ],
+  "ItemIntegratedCircuit10": [
+    {
+      "ItemGoldIngot": 10,
+      "ItemSteelIngot": 4,
+      "ItemElectrumIngot": 5,
+      "ItemSolderIngot": 2
+    }
+  ],
+  "ItemKitLogicCircuit": [
+    {
+      "ItemCopperIngot": 10,
+      "ItemSteelIngot": 4,
+      "ItemSolderIngot": 2
+    }
+  ],
+  "ItemPowerConnector": [
+    {
+      "ItemIronIngot": 10,
+      "ItemGoldIngot": 3,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "ItemKitPressurePlate": [
+    {
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemKitSolidGenerator": [
+    {
+      "ItemIronIngot": 50,
+      "ItemCopperIngot": 10
+    }
+  ],
+  "ItemKitGasGenerator": [
+    {
+      "ItemIronIngot": 50,
+      "ItemCopperIngot": 10
+    }
+  ],
+  "ItemKitSensor": [
+    {
+      "ItemIronIngot": 3,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 1
+    },
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 1
+    }
+  ],
+  "ItemElectronicParts": [
+    {
+      "ItemIronIngot": 3,
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 3
+    }
+  ],
+  "ItemKitResearchMachine": [
+    {
+      "ItemIronIngot": 9,
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 3
+    }
+  ],
+  "ItemKitWeatherStation": [
+    {
+      "ItemIronIngot": 8,
+      "ItemGoldIngot": 3,
+      "ItemCopperIngot": 5,
+      "ItemSteelIngot": 3
+    }
+  ],
+  "ItemResearchCapsuleRed": [
+    {
+      "ItemIronIngot": 2,
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 3
+    }
+  ],
+  "ItemResearchCapsule": [
+    {
+      "ItemIronIngot": 9,
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 3
+    }
+  ],
+  "ItemResearchCapsuleGreen": [
+    {
+      "ItemIronIngot": 9,
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 3,
+      "ItemAstroloyIngot": 2
+    }
+  ],
+  "ItemResearchCapsuleYellow": [
+    {
+      "ItemIronIngot": 9,
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 3,
+      "ItemAstroloyIngot": 3
+    }
+  ],
+  "ItemKitSolarPanelBasic": [
+    {
+      "ItemIronIngot": 10,
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 10
+    }
+  ],
+  "ItemKitSolarPanel": [
+    {
+      "ItemSteelIngot": 15,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 20
+    }
+  ],
+  "ItemKitStirlingEngine": [
+    {
+      "ItemSteelIngot": 30,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 20
+    }
+  ],
+  "ItemKitSolarPanelBasicReinforced": [
+    {
+      "ItemSteelIngot": 10,
+      "ItemInvarIngot": 10,
+      "ItemElectrumIngot": 2,
+      "ItemCopperIngot": 10
+    }
+  ],
+  "ItemKitSolarPanelReinforced": [
+    {
+      "ItemSteelIngot": 10,
+      "ItemAstroloyIngot": 15,
+      "ItemElectrumIngot": 5,
+      "ItemCopperIngot": 20
+    }
+  ],
+  "PortableSolarPanel": [
+    {
+      "ItemIronIngot": 5,
+      "ItemGoldIngot": 3,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "ItemKitTransformer": [
+    {
+      "ItemSteelIngot": 10,
+      "ItemElectrumIngot": 5
+    }
+  ],
+  "ItemKitTransformerSmall": [
+    {
+      "ItemIronIngot": 10,
+      "ItemCopperIngot": 3,
+      "ItemGoldIngot": 1
+    }
+  ],
+  "ItemTablet": [
+    {
+      "ItemCopperIngot": 3,
+      "ItemGoldIngot": 2,
+      "ItemSolderIngot": 5
+    }
+  ],
+  "ItemAdvancedTablet": [
+    {
+      "ItemIronIngot": 3,
+      "ItemCopperIngot": 5.5,
+      "ItemGoldIngot": 12,
+      "ItemSteelIngot": 2,
+      "ItemSolderIngot": 5,
+      "ItemElectrumIngot": 1
+    }
+  ],
+  "ItemLaptop": [
+    {
+      "ItemCopperIngot": 5.5,
+      "ItemGoldIngot": 12,
+      "ItemSteelIngot": 2,
+      "ItemSolderIngot": 5,
+      "ItemElectrumIngot": 5
+    }
+  ],
+  "MotherboardLogic": [
+    {
+      "ItemCopperIngot": 5,
+      "ItemGoldIngot": 5
+    }
+  ],
+  "MotherboardProgrammableChip": [
+    {
+      "ItemCopperIngot": 5,
+      "ItemGoldIngot": 5
+    }
+  ],
+  "MotherboardSorter": [
+    {
+      "ItemGoldIngot": 5,
+      "ItemSilverIngot": 5
+    }
+  ],
+  "MotherboardComms": [
+    {
+      "ItemCopperIngot": 5,
+      "ItemGoldIngot": 5,
+      "ItemSilverIngot": 5,
+      "ItemElectrumIngot": 2
+    }
+  ],
+  "ItemKitBeacon": [
+    {
+      "ItemCopperIngot": 2,
+      "ItemGoldIngot": 4,
+      "ItemSteelIngot": 5,
+      "ItemSolderIngot": 2
+    }
+  ],
+  "DynamicGPR": [
+    {
+      "ItemCopperIngot": 2,
+      "ItemGoldIngot": 10,
+      "ItemSteelIngot": 5
+    }
+  ],
+  "ItemKitElevator": [
+    {
+      "ItemCopperIngot": 2,
+      "ItemGoldIngot": 4,
+      "ItemSteelIngot": 2,
+      "ItemSolderIngot": 2
+    }
+  ],
+  "ItemKitHydroponicStation": [
+    {
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 20,
+      "ItemSteelIngot": 10,
+      "ItemNickelIngot": 5
+    }
+  ],
+  "ItemKitSmallSatelliteDish": [
+    {
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 10
+    }
+  ],
+  "ItemKitSatelliteDish": [
+    {
+      "ItemElectrumIngot": 15,
+      "ItemSteelIngot": 20,
+      "ItemSolderIngot": 10
+    }
+  ],
+  "ItemKitLargeSatelliteDish": [
+    {
+      "ItemAstroloyIngot": 100,
+      "ItemInconelIngot": 50,
+      "ItemWaspaloyIngot": 20
+    }
+  ],
+  "ItemKitLandingPad": [
+    {
+      "ItemCopperIngot": 1,
+      "ItemSteelIngot": 5
+    }
+  ],
+  "ItemKitHarvie": [
+    {
+      "ItemElectrumIngot": 10,
+      "ItemCopperIngot": 15,
+      "ItemSteelIngot": 10,
+      "ItemSolderIngot": 5,
+      "ItemSiliconIngot": 5
+    }
+  ],
+  "ItemKitDynamicGenerator": [
+    {
+      "ItemGoldIngot": 15,
+      "ItemNickelIngot": 15,
+      "ItemSteelIngot": 20,
+      "ItemSolderIngot": 5
+    }
+  ],
+  "ItemKitVendingMachine": [
+    {
+      "ItemSteelIngot": 20,
+      "ItemGoldIngot": 50,
+      "ItemSolderIngot": 10,
+      "ItemElectrumIngot": 50
+    }
+  ],
+  "ItemKitVendingMachineRefrigerated": [
+    {
+      "ItemSteelIngot": 40,
+      "ItemGoldIngot": 60,
+      "ItemSolderIngot": 30,
+      "ItemElectrumIngot": 80
+    }
+  ],
+  "ItemKitAutomatedOven": [
+    {
+      "ItemSteelIngot": 25,
+      "ItemGoldIngot": 10,
+      "ItemCopperIngot": 15,
+      "ItemSolderIngot": 10,
+      "ItemConstantanIngot": 5
+    }
+  ],
+  "ItemKitAdvancedPackagingMachine": [
+    {
+      "ItemSteelIngot": 20,
+      "ItemCopperIngot": 10,
+      "ItemConstantanIngot": 10,
+      "ItemElectrumIngot": 15
+    }
+  ],
+  "ItemKitAdvancedComposter": [
+    {
+      "ItemSteelIngot": 30,
+      "ItemCopperIngot": 15,
+      "ItemElectrumIngot": 20,
+      "ItemSolderIngot": 5
+    }
+  ],
+  "PortableComposter": [
+    {
+      "ItemSteelIngot": 10,
+      "ItemCopperIngot": 15
+    }
+  ],
+  "KitSDBSilo": [
+    {
+      "ItemGoldIngot": 20,
+      "ItemSteelIngot": 15,
+      "ItemCopperIngot": 10
+    }
+  ],
+  "ItemKitTurbineGenerator": [
+    {
+      "ItemIronIngot": 5,
+      "ItemGoldIngot": 4,
+      "ItemSolderIngot": 4,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemKitUprightWindTurbine": [
+    {
+      "ItemIronIngot": 10,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 10
+    }
+  ],
+  "ItemKitWindTurbine": [
+    {
+      "ItemSteelIngot": 20,
+      "ItemElectrumIngot": 5,
+      "ItemCopperIngot": 10
+    }
+  ],
+  "ItemLabeller": [
+    {
+      "ItemIronIngot": 3,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 2
+    },
+    {
+      "ItemIronIngot": 2,
+      "ItemGoldIngot": 1
+    }
+  ],
+  "ElectronicPrinterMod": [
+    {
+      "ItemSteelIngot": 35,
+      "ItemElectrumIngot": 8,
+      "ItemSolderIngot": 8,
+      "ItemConstantanIngot": 8
+    }
+  ],
+  "AutolathePrinterMod": [
+    {
+      "ItemSteelIngot": 35,
+      "ItemElectrumIngot": 8,
+      "ItemSolderIngot": 8,
+      "ItemConstantanIngot": 8
+    }
+  ],
+  "ToolPrinterMod": [
+    {
+      "ItemSteelIngot": 35,
+      "ItemElectrumIngot": 8,
+      "ItemSolderIngot": 8,
+      "ItemConstantanIngot": 8
+    }
+  ],
+  "PipeBenderMod": [
+    {
+      "ItemSteelIngot": 35,
+      "ItemElectrumIngot": 8,
+      "ItemSolderIngot": 8,
+      "ItemConstantanIngot": 8
+    }
+  ],
+  "ItemKitAdvancedFurnace": [
+    {
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 25,
+      "ItemSteelIngot": 30,
+      "ItemElectrumIngot": 15,
+      "ItemSolderIngot": 8,
+      "ItemSiliconIngot": 6
+    }
+  ],
+  "ItemWearLamp": [
+    {
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ApplianceMicrowave": [
+    {
+      "ItemIronIngot": 5,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "AppliancePackagingMachine": [
+    {
+      "ItemIronIngot": 10,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ApplianceDeskLampRight": [
+    {
+      "ItemIronIngot": 2,
+      "ItemSiliconIngot": 1
+    }
+  ],
+  "ApplianceDeskLampLeft": [
+    {
+      "ItemIronIngot": 2,
+      "ItemSiliconIngot": 1
+    }
+  ],
+  "ApplianceReagentProcessor": [
+    {
+      "ItemIronIngot": 5,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ApplianceChemistryStation": [
+    {
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 5,
+      "ItemSteelIngot": 5
+    }
+  ],
+  "AppliancePaintMixer": [
+    {
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 5,
+      "ItemSteelIngot": 5
+    }
+  ],
+  "ItemKitRoverMKI": [
+    {
+      "ItemCopperIngot": 15,
+      "ItemSteelIngot": 80,
+      "ItemElectrumIngot": 10,
+      "ItemConstantanIngot": 5
+    }
+  ],
+  "ItemKitAutoMinerSmall": [
+    {
+      "ItemIronIngot": 15,
+      "ItemCopperIngot": 15,
+      "ItemSteelIngot": 100,
+      "ItemElectrumIngot": 50,
+      "ItemInvarIngot": 25
+    }
+  ],
+  "ItemKitHorizontalAutoMiner": [
+    {
+      "ItemIronIngot": 8,
+      "ItemCopperIngot": 7,
+      "ItemSteelIngot": 60,
+      "ItemElectrumIngot": 25,
+      "ItemInvarIngot": 15
+    }
+  ],
+  "ItemCreditCard": [
+    {
+      "ItemSiliconIngot": 5,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "AppliancePlantGeneticAnalyzer": [
+    {
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 5,
+      "ItemSteelIngot": 5
+    }
+  ],
+  "AppliancePlantGeneticSplicer": [
+    {
+      "ItemStelliteIngot": 20,
+      "ItemInconelIngot": 10
+    }
+  ],
+  "AppliancePlantGeneticStabilizer": [
+    {
+      "ItemStelliteIngot": 20,
+      "ItemInconelIngot": 10
+    }
+  ],
+  "ItemActiveVent": [
+    {
+      "ItemIronIngot": 5,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "ItemGasCanisterEmpty": [
+    {
+      "ItemIronIngot": 5
+    }
+  ],
+  "ItemKitWaterBottleFiller": [
+    {
+      "ItemCopperIngot": 3,
+      "ItemIronIngot": 5,
+      "ItemSiliconIngot": 8
+    }
+  ],
+  "ItemWaterBottle": [
+    {
+      "ItemIronIngot": 2,
+      "ItemSiliconIngot": 4
+    }
+  ],
+  "ItemGasCanisterSmart": [
+    {
+      "ItemCopperIngot": 2,
+      "ItemSteelIngot": 15,
+      "ItemSiliconIngot": 2
+    }
+  ],
+  "ItemLiquidCanisterSmart": [
+    {
+      "ItemCopperIngot": 2,
+      "ItemSteelIngot": 15,
+      "ItemSiliconIngot": 2
+    }
+  ],
+  "ItemLiquidCanisterEmpty": [
+    {
+      "ItemIronIngot": 5
+    }
+  ],
+  "ItemKitSuitStorage": [
+    {
+      "ItemIronIngot": 15,
+      "ItemCopperIngot": 5,
+      "ItemSilverIngot": 5
+    }
+  ],
+  "ItemGasFilterCarbonDioxide": [
+    {
+      "ItemIronIngot": 5
+    }
+  ],
+  "ItemGasFilterPollutants": [
+    {
+      "ItemIronIngot": 5
+    }
+  ],
+  "ItemGasFilterNitrogen": [
+    {
+      "ItemIronIngot": 5
+    }
+  ],
+  "ItemGasFilterOxygen": [
+    {
+      "ItemIronIngot": 5
+    }
+  ],
+  "ItemGasFilterVolatiles": [
+    {
+      "ItemIronIngot": 5
+    }
+  ],
+  "ItemGasFilterNitrousOxide": [
+    {
+      "ItemIronIngot": 5
+    }
+  ],
+  "ItemGasFilterCarbonDioxideM": [
+    {
+      "ItemIronIngot": 5,
+      "ItemSilverIngot": 5,
+      "ItemConstantanIngot": 1
+    }
+  ],
+  "ItemGasFilterPollutantsM": [
+    {
+      "ItemIronIngot": 5,
+      "ItemSilverIngot": 5,
+      "ItemConstantanIngot": 1
+    }
+  ],
+  "ItemGasFilterNitrogenM": [
+    {
+      "ItemIronIngot": 5,
+      "ItemSilverIngot": 5,
+      "ItemConstantanIngot": 1
+    }
+  ],
+  "ItemGasFilterOxygenM": [
+    {
+      "ItemIronIngot": 5,
+      "ItemSilverIngot": 5,
+      "ItemConstantanIngot": 1
+    }
+  ],
+  "ItemGasFilterVolatilesM": [
+    {
+      "ItemIronIngot": 5,
+      "ItemSilverIngot": 5,
+      "ItemConstantanIngot": 1
+    }
+  ],
+  "ItemGasFilterNitrousOxideM": [
+    {
+      "ItemIronIngot": 5,
+      "ItemSilverIngot": 5,
+      "ItemConstantanIngot": 1
+    }
+  ],
+  "ItemGasFilterCarbonDioxideL": [
+    {
+      "ItemSteelIngot": 5,
+      "ItemStelliteIngot": 1,
+      "ItemInvarIngot": 1
+    }
+  ],
+  "ItemGasFilterPollutantsL": [
+    {
+      "ItemSteelIngot": 5,
+      "ItemStelliteIngot": 1,
+      "ItemInvarIngot": 1
+    }
+  ],
+  "ItemGasFilterNitrogenL": [
+    {
+      "ItemSteelIngot": 5,
+      "ItemStelliteIngot": 1,
+      "ItemInvarIngot": 1
+    }
+  ],
+  "ItemGasFilterOxygenL": [
+    {
+      "ItemSteelIngot": 5,
+      "ItemStelliteIngot": 1,
+      "ItemInvarIngot": 1
+    }
+  ],
+  "ItemGasFilterVolatilesL": [
+    {
+      "ItemSteelIngot": 5,
+      "ItemStelliteIngot": 1,
+      "ItemInvarIngot": 1
+    }
+  ],
+  "ItemGasFilterNitrousOxideL": [
+    {
+      "ItemSteelIngot": 5,
+      "ItemStelliteIngot": 1,
+      "ItemInvarIngot": 1
+    }
+  ],
+  "ItemGasTankStorage": [
+    {
+      "ItemIronIngot": 5
+    }
+  ],
+  "ItemLiquidTankStorage": [
+    {
+      "ItemIronIngot": 5
+    }
+  ],
+  "ItemHydroponicTray": [
+    {
+      "ItemIronIngot": 10
+    }
+  ],
+  "ItemKitPlanter": [
+    {
+      "ItemIronIngot": 10
+    }
+  ],
+  "ItemKitAirlock": [
     {
       "ItemSteelIngot": 15,
       "ItemCopperIngot": 5,
       "ItemGoldIngot": 5
     }
   ],
-  "ItemGrenade":[
+  "ItemKitAirlockGate": [
     {
-      "ItemLeadIngot":25,
-      "ItemSteelIngot":25,
-      "ItemCopperIngot":15,
-      "ItemGoldIngot":1
+      "ItemSteelIngot": 25,
+      "ItemCopperIngot": 5,
+      "ItemGoldIngot": 5
     }
   ],
-  "ItemNVG":[
+  "ItemKitAtmospherics": [
     {
-      "ItemHastelloyIngot":10,
-      "ItemSteelIngot":5,
-      "debug":true,
-      "ItemSiliconIngot":5
+      "ItemIronIngot": 10,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 20
     }
   ],
-  "AccessCardBlack":[
+  "ItemKitInsulatedPipe": [
+    {
+      "ItemSteelIngot": 1,
+      "ItemSiliconIngot": 1
+    }
+  ],
+  "ItemKitInsulatedLiquidPipe": [
+    {
+      "ItemSteelIngot": 1,
+      "ItemSiliconIngot": 1
+    }
+  ],
+  "ItemKitPipeLiquid": [
+    {
+      "ItemIronIngot": 0.5
+    }
+  ],
+  "ItemKitRegulator": [
+    {
+      "ItemIronIngot": 5,
+      "ItemCopperIngot": 2,
+      "ItemGoldIngot": 1
+    }
+  ],
+  "ItemKitLiquidRegulator": [
+    {
+      "ItemIronIngot": 5,
+      "ItemCopperIngot": 2,
+      "ItemGoldIngot": 1
+    }
+  ],
+  "ItemKitTank": [
+    {
+      "ItemCopperIngot": 5,
+      "ItemSteelIngot": 20
+    }
+  ],
+  "ItemKitLiquidTank": [
+    {
+      "ItemCopperIngot": 5,
+      "ItemSteelIngot": 20
+    }
+  ],
+  "ItemKitTankInsulated": [
+    {
+      "ItemCopperIngot": 5,
+      "ItemSteelIngot": 20,
+      "ItemSiliconIngot": 30
+    }
+  ],
+  "ItemKitLiquidTankInsulated": [
+    {
+      "ItemCopperIngot": 5,
+      "ItemSteelIngot": 20,
+      "ItemSiliconIngot": 30
+    }
+  ],
+  "ItemPassiveVent": [
+    {
+      "ItemIronIngot": 3
+    }
+  ],
+  "ItemPipeAnalyizer": [
+    {
+      "ItemIronIngot": 2,
+      "ItemGoldIngot": 2,
+      "ItemElectrumIngot": 2
+    }
+  ],
+  "ItemLiquidPipeAnalyzer": [
+    {
+      "ItemIronIngot": 2,
+      "ItemGoldIngot": 2,
+      "ItemElectrumIngot": 2
+    }
+  ],
+  "ItemPipeDigitalValve": [
+    {
+      "ItemCopperIngot": 2,
+      "ItemSteelIngot": 5,
+      "ItemInvarIngot": 3
+    }
+  ],
+  "ItemWaterPipeDigitalValve": [
+    {
+      "ItemCopperIngot": 2,
+      "ItemSteelIngot": 5,
+      "ItemInvarIngot": 3
+    }
+  ],
+  "ItemPipeGasMixer": [
+    {
+      "ItemIronIngot": 2,
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemPipeLabel": [
+    {
+      "ItemIronIngot": 1
+    }
+  ],
+  "ItemPipeMeter": [
+    {
+      "ItemIronIngot": 3,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemWaterPipeMeter": [
+    {
+      "ItemIronIngot": 3,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemLiquidDrain": [
+    {
+      "ItemIronIngot": 5,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemKitPipeRadiator": [
+    {
+      "ItemGoldIngot": 3,
+      "ItemSteelIngot": 2
+    }
+  ],
+  "ItemKitLargeExtendableRadiator": [
+    {
+      "ItemCopperIngot": 10,
+      "ItemSteelIngot": 10,
+      "ItemInvarIngot": 10
+    }
+  ],
+  "ItemKitPassiveLargeRadiatorLiquid": [
+    {
+      "ItemCopperIngot": 5,
+      "ItemSteelIngot": 5,
+      "ItemInvarIngot": 5
+    }
+  ],
+  "ItemKitPassiveLargeRadiatorGas": [
+    {
+      "ItemCopperIngot": 5,
+      "ItemSteelIngot": 5,
+      "ItemInvarIngot": 5
+    }
+  ],
+  "ItemKitHeatExchanger": [
+    {
+      "ItemCopperIngot": 5,
+      "ItemSteelIngot": 5
+    }
+  ],
+  "ItemKitPipeRadiatorLiquid": [
+    {
+      "ItemGoldIngot": 3,
+      "ItemSteelIngot": 2
+    }
+  ],
+  "ItemPipeValve": [
+    {
+      "ItemIronIngot": 3,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemLiquidPipeValve": [
+    {
+      "ItemIronIngot": 3,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemPipeVolumePump": [
+    {
+      "ItemIronIngot": 5,
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 3
+    }
+  ],
+  "ItemKitTurboVolumePump": [
+    {
+      "ItemGoldIngot": 4,
+      "ItemElectrumIngot": 5,
+      "ItemCopperIngot": 4,
+      "ItemSteelIngot": 5
+    }
+  ],
+  "ItemKitLiquidTurboVolumePump": [
+    {
+      "ItemGoldIngot": 4,
+      "ItemElectrumIngot": 5,
+      "ItemCopperIngot": 4,
+      "ItemSteelIngot": 5
+    }
+  ],
+  "ItemLiquidPipeVolumePump": [
+    {
+      "ItemIronIngot": 5,
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 3
+    }
+  ],
+  "ItemLiquidPipeHeater": [
+    {
+      "ItemIronIngot": 5,
+      "ItemGoldIngot": 3,
+      "ItemCopperIngot": 3
+    }
+  ],
+  "ItemPipeHeater": [
+    {
+      "ItemIronIngot": 5,
+      "ItemGoldIngot": 3,
+      "ItemCopperIngot": 3
+    }
+  ],
+  "ItemTankConnector": [
+    {
+      "ItemIronIngot": 5
+    }
+  ],
+  "ItemTankConnectorLiquid": [
+    {
+      "ItemIronIngot": 5
+    }
+  ],
+  "ItemInsulatedTankConnector": [
+    {
+      "ItemSteelIngot": 10,
+      "ItemIronIngot": 5
+    }
+  ],
+  "ItemInsulatedTankConnectorLiquid": [
+    {
+      "ItemSteelIngot": 10,
+      "ItemIronIngot": 5
+    }
+  ],
+  "ItemWallCooler": [
+    {
+      "ItemIronIngot": 3,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 3
+    }
+  ],
+  "ItemWaterWallCooler": [
+    {
+      "ItemIronIngot": 3,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 3
+    }
+  ],
+  "ItemWallHeater": [
+    {
+      "ItemIronIngot": 3,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 3
+    }
+  ],
+  "ItemKitSleeper": [
+    {
+      "ItemSteelIngot": 25,
+      "ItemGoldIngot": 10,
+      "ItemCopperIngot": 10
+    }
+  ],
+  "ItemKitCryoTube": [
+    {
+      "ItemGoldIngot": 10,
+      "ItemSilverIngot": 5,
+      "ItemCopperIngot": 10,
+      "ItemSteelIngot": 35
+    }
+  ],
+  "ItemDynamicAirCon": [
+    {
+      "ItemGoldIngot": 5,
+      "ItemSilverIngot": 5,
+      "ItemSteelIngot": 20,
+      "ItemSolderIngot": 5
+    }
+  ],
+  "ItemDynamicScrubber": [
+    {
+      "ItemGoldIngot": 5,
+      "ItemInvarIngot": 5,
+      "ItemSteelIngot": 20,
+      "ItemSolderIngot": 5
+    }
+  ],
+  "ItemKitDynamicHydroponics": [
+    {
+      "ItemSteelIngot": 20,
+      "ItemCopperIngot": 5,
+      "ItemNickelIngot": 5
+    }
+  ],
+  "ItemKitPipeOrgan": [
+    {
+      "ItemIronIngot": 3
+    }
+  ],
+  "ItemKitIceCrusher": [
+    {
+      "ItemIronIngot": 3,
+      "ItemCopperIngot": 1,
+      "ItemGoldIngot": 1
+    }
+  ],
+  "ApplianceSeedTray": [
+    {
+      "ItemIronIngot": 10,
+      "ItemCopperIngot": 5,
+      "ItemSiliconIngot": 15
+    }
+  ],
+  "ItemMKIICrowbar": [
+    {
+      "ItemIronIngot": 5,
+      "ItemElectrumIngot": 5
+    }
+  ],
+  "ItemMKIIWrench": [
+    {
+      "ItemIronIngot": 3,
+      "ItemElectrumIngot": 3
+    }
+  ],
+  "ItemMKIIDuctTape": [
+    {
+      "ItemIronIngot": 2,
+      "ItemElectrumIngot": 1
+    }
+  ],
+  "ItemMKIIDrill": [
+    {
+      "ItemIronIngot": 5,
+      "ItemCopperIngot": 5,
+      "ItemElectrumIngot": 5
+    }
+  ],
+  "ItemMKIIScrewdriver": [
+    {
+      "ItemIronIngot": 2,
+      "ItemElectrumIngot": 2
+    }
+  ],
+  "ItemMKIIArcWelder": [
+    {
+      "ItemSteelIngot": 10,
+      "ItemSolderIngot": 10,
+      "ItemElectrumIngot": 14,
+      "ItemInvarIngot": 5
+    }
+  ],
+  "ItemMKIIAngleGrinder": [
+    {
+      "ItemIronIngot": 3,
+      "ItemCopperIngot": 1,
+      "ItemElectrumIngot": 4
+    }
+  ],
+  "ItemMKIIWireCutters": [
+    {
+      "ItemIronIngot": 3,
+      "ItemElectrumIngot": 5
+    }
+  ],
+  "ItemMKIIMiningDrill": [
+    {
+      "ItemIronIngot": 3,
+      "ItemCopperIngot": 2,
+      "ItemElectrumIngot": 5
+    }
+  ],
+  "ItemCrowbar": [
+    {
+      "ItemIronIngot": 5
+    }
+  ],
+  "ItemBeacon": [
+    {
+      "ItemIronIngot": 2,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemWrench": [
+    {
+      "ItemIronIngot": 3
+    }
+  ],
+  "ItemDuctTape": [
+    {
+      "ItemIronIngot": 2
+    }
+  ],
+  "ItemDrill": [
+    {
+      "ItemIronIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "ItemScrewdriver": [
+    {
+      "ItemIronIngot": 2
+    }
+  ],
+  "ItemArcWelder": [
+    {
+      "ItemSteelIngot": 10,
+      "ItemSolderIngot": 10,
+      "ItemElectrumIngot": 10,
+      "ItemInvarIngot": 5
+    }
+  ],
+  "ItemWeldingTorch": [
+    {
+      "ItemIronIngot": 3,
+      "ItemCopperIngot": 1
+    }
+  ],
+  "ItemAngleGrinder": [
+    {
+      "ItemIronIngot": 3,
+      "ItemCopperIngot": 1
+    }
+  ],
+  "ItemTerrainManipulator": [
+    {
+      "ItemIronIngot": 5,
+      "ItemGoldIngot": 2,
+      "ItemCopperIngot": 3
+    },
+    {
+      "ItemSteelIngot": 10,
+      "ItemSolderIngot": 5,
+      "ItemElectrumIngot": 2,
+      "ItemInvarIngot": 1
+    }
+  ],
+  "ItemDirtCanister": [
+    {
+      "ItemIronIngot": 3
+    },
+    {
+      "ItemIronIngot": 10,
+      "ItemSolderIngot": 2,
+      "ItemElectrumIngot": 2
+    }
+  ],
+  "ItemWireCutters": [
+    {
+      "ItemIronIngot": 3
+    }
+  ],
+  "ItemRemoteDetonator": [
+    {
+      "ItemIronIngot": 3,
+      "ItemGoldIngot": 1
+    }
+  ],
+  "ItemMiningDrill": [
+    {
+      "ItemIronIngot": 3,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemMiningDrillHeavy": [
+    {
+      "ItemSteelIngot": 10,
+      "ItemSolderIngot": 10,
+      "ItemElectrumIngot": 5,
+      "ItemInvarIngot": 10
+    }
+  ],
+  "ItemPickaxe": [
+    {
+      "ItemIronIngot": 2,
+      "ItemCopperIngot": 1
+    }
+  ],
+  "ItemMiningBelt": [
+    {
+      "ItemIronIngot": 3
+    }
+  ],
+  "ItemMiningBeltMKII": [
+    {
+      "ItemSteelIngot": 10,
+      "ItemConstantanIngot": 5
+    }
+  ],
+  "ItemMiningBackPack": [
+    {
+      "ItemIronIngot": 6
+    }
+  ],
+  "ItemHardMiningBackPack": [
+    {
+      "ItemIronIngot": 6,
+      "ItemInvarIngot": 1
+    }
+  ],
+  "ItemSpacepack": [
+    {
+      "ItemIronIngot": 5,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemJetpackBasic": [
+    {
+      "ItemGoldIngot": 2,
+      "ItemLeadIngot": 5,
+      "ItemSteelIngot": 10
+    }
+  ],
+  "ItemToolBelt": [
+    {
+      "ItemIronIngot": 3
+    }
+  ],
+  "ItemMkIIToolbelt": [
+    {
+      "ItemIronIngot": 3,
+      "ItemConstantanIngot": 5
+    }
+  ],
+  "WeaponPistolEnergy": [
+    {
+      "ItemGoldIngot": 10,
+      "ItemSteelIngot": 10,
+      "ItemSolderIngot": 10,
+      "ItemElectrumIngot": 20
+    },
+    {
+      "ItemGoldIngot": 10,
+      "ItemSteelIngot": 10,
+      "ItemSolderIngot": 10,
+      "ItemElectrumIngot": 20
+    }
+  ],
+  "WeaponRifleEnergy": [
+    {
+      "ItemGoldIngot": 10,
+      "ItemSteelIngot": 20,
+      "ItemSolderIngot": 10,
+      "ItemElectrumIngot": 20,
+      "ItemInvarIngot": 10,
+      "ItemConstantanIngot": 10
+    },
+    {
+      "ItemGoldIngot": 10,
+      "ItemSteelIngot": 20,
+      "ItemSolderIngot": 10,
+      "ItemElectrumIngot": 20,
+      "ItemInvarIngot": 10,
+      "ItemConstantanIngot": 10
+    }
+  ],
+  "UniformCommander": [
+    {
+      "ItemSiliconIngot": 25
+    }
+  ],
+  "UniformOrangeJumpSuit": [
+    {
+      "ItemSiliconIngot": 10
+    }
+  ],
+  "UniformMarine": [
+    {
+      "ItemSiliconIngot": 10
+    }
+  ],
+  "ItemRoadFlare": [
+    {
+      "ItemIronIngot": 1
+    }
+  ],
+  "ItemChemLightBlue": [
+    {
+      "ItemSiliconIngot": 1
+    }
+  ],
+  "ItemChemLightGreen": [
+    {
+      "ItemSiliconIngot": 1
+    }
+  ],
+  "ItemChemLightRed": [
+    {
+      "ItemSiliconIngot": 1
+    }
+  ],
+  "ItemChemLightWhite": [
+    {
+      "ItemSiliconIngot": 1
+    }
+  ],
+  "ItemChemLightYellow": [
+    {
+      "ItemSiliconIngot": 1
+    }
+  ],
+  "ItemIgniter": [
+    {
+      "ItemCopperIngot": 3
+    }
+  ],
+  "ItemHardSuit": [
+    {
+      "ItemSteelIngot": 20,
+      "ItemAstroloyIngot": 10,
+      "ItemStelliteIngot": 2
+    }
+  ],
+  "ItemFireExtinguisher": [
+    {
+      "ItemIronIngot": 5
+    }
+  ],
+  "ItemHardsuitHelmet": [
+    {
+      "ItemSteelIngot": 10,
+      "ItemAstroloyIngot": 2,
+      "ItemStelliteIngot": 2
+    }
+  ],
+  "ItemMarineBodyArmor": [
+    {
+      "ItemSteelIngot": 20,
+      "ItemSiliconIngot": 10,
+      "ItemNickelIngot": 10
+    }
+  ],
+  "ItemMarineHelmet": [
+    {
+      "ItemSteelIngot": 8,
+      "ItemSiliconIngot": 4,
+      "ItemGoldIngot": 4
+    }
+  ],
+  "ItemNVG": [
+    {
+      "ItemHastelloyIngot": 10,
+      "ItemSiliconIngot": 5,
+      "ItemSteelIngot": 5
+    }
+  ],
+  "ItemSensorLenses": [
+    {
+      "ItemInconelIngot": 5,
+      "ItemSiliconIngot": 5,
+      "ItemSteelIngot": 5
+    }
+  ],
+  "ItemSensorProcessingUnitOreScanner": [
+    {
+      "ItemIronIngot": 5,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5,
+      "ItemSiliconIngot": 5
+    }
+  ],
+  "ItemGlasses": [
+    {
+      "ItemSiliconIngot": 10,
+      "ItemIronIngot": 15
+    }
+  ],
+  "ItemHardBackpack": [
+    {
+      "ItemSteelIngot": 15,
+      "ItemAstroloyIngot": 5,
+      "ItemStelliteIngot": 5
+    }
+  ],
+  "ItemHardJetpack": [
+    {
+      "ItemSteelIngot": 20,
+      "ItemAstroloyIngot": 8,
+      "ItemStelliteIngot": 8,
+      "ItemWaspaloyIngot": 8
+    }
+  ],
+  "ItemFlagSmall": [
+    {
+      "ItemIronIngot": 1
+    }
+  ],
+  "ItemBasketBall": [
+    {
+      "ItemSiliconIngot": 1
+    }
+  ],
+  "ItemKitBasket": [
+    {
+      "ItemIronIngot": 5,
+      "ItemCopperIngot": 2
+    }
+  ],
+  "ItemPlantSampler": [
+    {
+      "ItemIronIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "CartridgeAccessController": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 5,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "AccessCardBlack": [
     {
       "ItemIronIngot": 1,
       "ItemGoldIngot": 1,
       "ItemCopperIngot": 1
+    }
+  ],
+  "AccessCardBlue": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 1
+    }
+  ],
+  "AccessCardBrown": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 1
+    }
+  ],
+  "AccessCardGray": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 1
+    }
+  ],
+  "AccessCardGreen": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 1
+    }
+  ],
+  "AccessCardKhaki": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 1
+    }
+  ],
+  "AccessCardOrange": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 1
+    }
+  ],
+  "AccessCardPink": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 1
+    }
+  ],
+  "AccessCardPurple": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 1
+    }
+  ],
+  "AccessCardRed": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 1
+    }
+  ],
+  "AccessCardWhite": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 1
+    }
+  ],
+  "AccessCardYellow": [
+    {
+      "ItemIronIngot": 1,
+      "ItemGoldIngot": 1,
+      "ItemCopperIngot": 1
+    }
+  ],
+  "Handgun": [
+    {
+      "ItemNickelIngot": 10,
+      "ItemSteelIngot": 30
+    }
+  ],
+  "HandGunMagazine": [
+    {
+      "ItemLeadIngot": 1,
+      "ItemSteelIngot": 3,
+      "ItemCopperIngot": 3
+    }
+  ],
+  "ItemAmmoBox": [
+    {
+      "ItemLeadIngot": 50,
+      "ItemSteelIngot": 30,
+      "ItemCopperIngot": 30
+    }
+  ],
+  "ItemGrenade": [
+    {
+      "ItemGoldIngot": 1,
+      "ItemLeadIngot": 25,
+      "ItemSteelIngot": 25,
+      "ItemCopperIngot": 15
+    }
+  ],
+  "ItemExplosive": [
+    {
+      "ItemGoldIngot": 5,
+      "ItemLeadIngot": 10,
+      "ItemSteelIngot": 7,
+      "ItemCopperIngot": 5,
+      "ItemElectrumIngot": 1
+    }
+  ],
+  "ItemMiningCharge": [
+    {
+      "ItemGoldIngot": 5,
+      "ItemLeadIngot": 10,
+      "ItemIronIngot": 7,
+      "ItemCopperIngot": 5
+    }
+  ],
+  "FireArmSMG": [
+    {
+      "ItemNickelIngot": 10,
+      "ItemSteelIngot": 30
+    }
+  ],
+  "SMGMagazine": [
+    {
+      "ItemLeadIngot": 1,
+      "ItemSteelIngot": 3,
+      "ItemCopperIngot": 3
+    }
+  ],
+  "ItemMuffin": [
+    {
+      "ItemEggIngot": 1,
+      "ItemMilkIngot": 10,
+      "ItemFlour": 50
+    }
+  ],
+  "ItemCerealBar": [
+    {
+      "ItemFlour": 50
+    }
+  ],
+  "ItemPotatoBaked": [
+    {
+      "ItemPotatoIngot": 1
+    }
+  ],
+  "ItemBreadLoaf": [
+    {
+      "ItemFlour": 200,
+      "ItemOilIngot": 5
+    }
+  ],
+  "ItemFries": [
+    {
+      "ItemPotatoIngot": 1,
+      "ItemOilIngot": 5
+    }
+  ],
+  "ItemPumpkinPie": [
+    {
+      "ItemEggIngot": 1,
+      "ItemMilkIngot": 10,
+      "ItemFlour": 100,
+      "ItemPumpkinIngot": 10
+    }
+  ],
+  "ItemCookedTomato": [
+    {
+      "ItemTomatoIngot": 1
+    }
+  ],
+  "ItemCookedCorn": [
+    {
+      "ItemCornIngot": 1
+    }
+  ],
+  "ItemCookedRice": [
+    {
+      "ItemRiceIngot": 3
+    }
+  ],
+  "ItemCookedPumpkin": [
+    {
+      "ItemPumpkinIngot": 1
+    }
+  ],
+  "ItemCookedPowderedEggs": [
+    {
+      "ItemEggIngot": 4
+    }
+  ],
+  "ItemCookedCondensedMilk": [
+    {
+      "ItemMilkIngot": 100
+    }
+  ],
+  "ItemCookedSoybean": [
+    {
+      "ItemSoyIngot": 5
     }
   ]
 }
